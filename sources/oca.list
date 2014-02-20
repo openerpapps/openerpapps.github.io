@@ -28,6 +28,10 @@
 7.0,contract-management,lp:~contract-management-core-editors/contract-management/7.0
 6.1,contract-management,lp:~contract-management-core-editors/contract-management/6.1
 
+# https://launchpad.net/openerp-crm
+7.0,openerp-crm,lp:openerp-crm/7.0
+6.1,openerp-crm,lp:openerp-crm/6.1
+
 7.0,department-mgmt,lp:~department-core-editors/department-mgmt/7.0
 6.1,department-mgmt,lp:~department-core-editors/department-mgmt/6.1
 
