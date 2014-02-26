@@ -13,3 +13,5 @@
 7.0,reis-openerp-addons,lp:reis-openerp-addons/7.0
 6.1,reis-openerp-addons,lp:reis-openerp-addons/6.1
 
+7.0,anybox-visual_export,https://bitbucket.org/anybox/visual_export,hg
+7.0,0k-web_m2o_enhanced,https://github.com/0k/web_m2o_enhanced.git,git
