@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Excel report engine</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        img{
+            width: 64px;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+      <div class="container center-block">
+
+        <div class="thumbnail pull-right">
+          <img class="img-rounded" src="openerp-report-xls.png"></img>
+        </div>
+        <h1>Excel report engine</h1>
+        <p>Noviat</p>
+        <p></p>
+
+      </div>
+    </div>
+
+    <div class="container">
+<p>This module adds Excel export capabilities to the standard OpenERP reporting engine.</p>
+<div class="section" id="report-development">
+<h1>Report development</h1>
+<p>In order to create an Excel report you can</p>
+<ul class="simple">
+<li>define a report of type 'xls'</li>
+<li>pass <tt class="docutils literal">{'xls_export': 1}</tt> via the context to the report create method</li>
+</ul>
+<p>The <tt class="docutils literal">report_xls</tt> class contains a number of attributes and methods to facilitate
+the creation XLS reports in OpenERP.</p>
+<ul>
+<li><p class="first">cell types</p>
+<p>Supported cell types : text, number, boolean, date.</p>
+</li>
+<li><p class="first">cell styles</p>
+<p>The predefined cell style definitions result in a consistent
+look and feel of the OpenERP Excel reports.</p>
+</li>
+<li><p class="first">cell formulas</p>
+<p>Cell formulas can be easily added with the help of the <tt class="docutils literal">rowcol_to_cell()</tt> function which
+you can import from the <tt class="docutils literal">utils.py</tt> module.</p>
+</li>
+<li><p class="first">Excel templates</p>
+<p>It is possible to define Excel templates which can be adapted by 'inherited' modules.
+Download the <tt class="docutils literal">account_move_line_report_xls</tt> module from <a class="reference external" href="http://apps.openerp.com">http://apps.openerp.com</a>
+as example.</p>
+</li>
+<li><p class="first">XLS with multiple sheets</p>
+<p>Download the <tt class="docutils literal">account_journal_report_xls</tt> module from <a class="reference external" href="http://apps.openerp.com">http://apps.openerp.com</a> as example.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="development-assistance">
+<h1>Development assistance</h1>
+<p>Contact <a class="reference external" href="mailto:info&#64;noviat.com">info&#64;noviat.com</a> for help with the development of Excel reports in OpenERP, .</p>
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

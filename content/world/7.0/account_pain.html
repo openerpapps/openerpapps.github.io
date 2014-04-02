@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>ISO 20022 XML payment files</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        img{
+            width: 64px;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+      <div class="container center-block">
+
+        <div class="thumbnail pull-right">
+          <img class="img-rounded" src="openerp-account-pain.png"></img>
+        </div>
+        <h1>ISO 20022 XML payment files</h1>
+        <p>Noviat</p>
+        <p></p>
+
+      </div>
+    </div>
+
+    <div class="container">
+<p>Module to generate Customer Credit Transfer Initiation message ISO 20022 XML - pain.001.001.03.</p>
+<p>This module implements the following subset of the ISO 20022 specifications:</p>
+<div class="section" id="european-credit-transfers">
+<h1>European Credit Transfers:</h1>
+<ul class="simple">
+<li>debtor and creditor account in SEPA countries</li>
+<li>debtor account in Company currency</li>
+<li>creditor account in Company currency</li>
+<li>creditor account identified by BIC &amp; IBAN</li>
+<li>support for single payments</li>
+</ul>
+<p>The module also prohibits the removal of a confirmed Payment Order.
+Such a removal is still possible via the 'Undo Payment' button available to users of the 'Accounting / Manager' group.</p>
+<p>Features targeted for the Belgian market (cf. febelfin guidelines):</p>
+<ul class="simple">
+<li>creditor account identified by IBAN (without BIC) for BE IBAN accounts</li>
+<li>support for belgian structured communication format</li>
+<li>by default, the right part of the VAT number (KBO/BCE number) is used to identify the Initiating Party</li>
+</ul>
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

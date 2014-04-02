@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Secuencia para facturas separada de la secuencia de asientos</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        img{
+            width: 64px;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+      <div class="container center-block">
+
+        <div class="thumbnail pull-right">
+          <img class="img-rounded" src="../../../assets/icon_blank.png"></img>
+        </div>
+        <h1>Secuencia para facturas separada de la secuencia de asientos</h1>
+        <p>Localización española de OpenERP</p>
+        <p></p>
+
+      </div>
+    </div>
+
+    <div class="container">
+<p>Este módulo separa los números de las facturas de los de los asientos. Para
+ello, convierte el campo number de 'related' a campo de texto normal, y le
+asigna un valor según una nueva secuencia definida en el diario
+correspondiente.</p>
+<p>Su uso es obligatorio para España, ya que legalmente las facturas deben llevar
+una numeración única y continua, lo que no es compatible con el sistema que
+utiliza OpenERP por defecto.</p>
+<p><strong>AVISO</strong>: Hay que configurar las secuencias correspondientes para todos los
+diarios de ventas, compras, abono de ventas y abono de compras utilizados
+después de instalar este módulo.</p>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

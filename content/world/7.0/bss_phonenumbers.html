@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Phone Numbers</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        img{
+            width: 64px;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+      <div class="container center-block">
+
+        <div class="thumbnail pull-right">
+          <img class="img-rounded" src="openerp-bss-phonenumbers.png"></img>
+        </div>
+        <h1>Phone Numbers</h1>
+        <p>Bluestar Solutions Sàrl</p>
+        <p></p>
+
+      </div>
+    </div>
+
+    <div class="container">
+<p>Add an ORM field type &quot;phonenumber&quot; which ensures that all phone numbers will be stored in E.164 format (like &quot;+41327200890&quot;) and displayed
+in international format (like &quot;+41 32 720 08 90&quot;) with a RFC 3966 Tel URI (like &quot;<a class="reference external" href="tel:+41-32-720-08-90">tel:+41-32-720-08-90</a>&quot;). Many formats are recognized
+when the field is edited. After validation, the ORM field will transform the entered value in E.164 format before storing it.
+If you type a phone number without country code, the country set for your user in OpenERP will be used.</p>
+<p>The RFC 3966 Tel URI can be opened by your desktop phone application to easily dial the number directly from an OpenERP partner form view.
+With E.164 format for phone numbers in database, you can imagine server-side features with OpenERP phone numbers and a phone server.</p>
+<p>For phone number format transformation, the module uses python-phonenumbers from David Drysdale (Apache License 2.0)
+which have to be installed separately on your OpenERP server. python-phonenumbers is a Python port of the Java libphonenumber library by Google.</p>
+<p>See bss_partner_phone_numbers and bss_crm_phone_numbers for usage.</p>
+<div class="section" id="links">
+<h1>Links</h1>
+<ul class="simple">
+<li>E.164 format on Wikipedia : <a class="reference external" href="http://en.wikipedia.org/wiki/E.164">http://en.wikipedia.org/wiki/E.164</a></li>
+<li>RFC 3966 Tel URI : <a class="reference external" href="http://www.ietf.org/rfc/rfc3966.txt">http://www.ietf.org/rfc/rfc3966.txt</a></li>
+<li>python-phonenumbers : <a class="reference external" href="https://github.com/daviddrysdale/python-phonenumbers">https://github.com/daviddrysdale/python-phonenumbers</a></li>
+<li>libphonenumber : <a class="reference external" href="https://code.google.com/p/libphonenumber">https://code.google.com/p/libphonenumber</a></li>
+<li>bss_partner_phone_numbers and bss_crm_phone_numbers sources : <a class="reference external" href="https://launchpad.net/bss-phonenumbers-addons">https://launchpad.net/bss-phonenumbers-addons</a></li>
+</ul>
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

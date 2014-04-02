@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Belgium - Invoices with Structured Communication</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        img{
+            width: 64px;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+      <div class="container center-block">
+
+        <div class="thumbnail pull-right">
+          <img class="img-rounded" src="openerp-l10n-be-invoice-bba.png"></img>
+        </div>
+        <h1>Belgium - Invoices with Structured Communication</h1>
+        <p>Noviat</p>
+        <p></p>
+
+      </div>
+    </div>
+
+    <div class="container">
+<p>This module adds support for the Belgian Structured Communication on in- and
+outgoing invoices as follows:</p>
+<blockquote>
+<ul class="simple">
+<li>The 'Reference' field label on an invoice is renamed to 'Communication'.</li>
+<li>A Structured Communication can be generated automatically on outgoing
+invoices according to a number of algorithms.</li>
+<li>The preferred type of Structured Communication and associated algorithm
+can be specified on the Partner records.
+A 'random' Structured Communication will be generated if no algorithm is
+specified on the Partner record.</li>
+</ul>
+</blockquote>
+<div class="section" id="supported-algorithms-for-outgoing-invoices">
+<h1>Supported algorithms for outgoing invoices</h1>
+<blockquote>
+<ol class="arabic">
+<li><p class="first">Random: <strong>+++RRR/RRRR/RRRDD+++</strong></p>
+<p><strong>R..R</strong> = Random Digits, <strong>DD</strong> = Check Digits</p>
+</li>
+<li><p class="first">Date: <strong>+++DOY/YEAR/SSSDD+++</strong></p>
+<p><strong>DOY</strong> = Day of the Year, <strong>SSS</strong> = Sequence Number, <strong>DD</strong> = Check Digits</p>
+</li>
+<li><p class="first">Customer Reference: <strong>+++RRR/RRRR/SSSDDD+++</strong></p>
+<p><strong>R..R</strong> = Customer Reference without non-numeric characters,
+<strong>SSS</strong> = Sequence Number, <strong>DD</strong> = Check Digits</p>
+</li>
+</ol>
+</blockquote>
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
