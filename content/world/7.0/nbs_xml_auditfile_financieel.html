@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Neobis XML Auditfile Financieel</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        img{
+            width: 64px;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+      <div class="container center-block">
+
+        <div class="thumbnail pull-right">
+          <img class="img-rounded" src="openerp-nbs-xml-auditfile-financieel.png"></img>
+        </div>
+        <h1>Neobis XML Auditfile Financieel</h1>
+        <p>Neobis ICT Dienstverlening B.V.</p>
+        <p></p>
+
+      </div>
+    </div>
+
+    <div class="container">
+<p>This module exports financial (accounting) information from your OpenERP system to a .XAF file.</p>
+<div class="section" id="this-module-is-considered-to-be-in-beta">
+<h1>This module is considered to be in Beta</h1>
+<p>It does so according to the <a class="reference external" href="http://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/aangifte_betalen_en_toezicht/toezicht/handhaving_en_controle/belastingcontrole_met_de_auditfile">standard set by the dutch tax authorities</a>.</p>
+<p>This module is tested with the default OpenERP dutch accounts (l10n_nl).
+But it should work with any config. It implements the minimum set needed to generate a valid XML.
+Most optional information will be added in future releases.</p>
+<p>This modules uses the <a class="reference external" href="http://v6apps.openerp.com/addon/6306?filter=%7B%22order_by%22%3A+%22click_counter+desc%22%2C+%22text_search%22%3A+%22xml_template%22%7D&amp;page=0">xml_template module</a>.
+created by Swing Entwicklung betrieblicher Informationssysteme GmbH, so thanks for that!</p>
+<dl class="docutils">
+<dt>You can export a audit-file by going to:</dt>
+<dd><ul class="first last simple">
+<li>Accounting--&gt;Reporting--&gt;Legal reports-&gt;Accounting Reports-&gt;Export XML Auditfile</li>
+</ul>
+</dd>
+</dl>
+<p><strong>Feel free to test and contribute to this module!</strong></p>
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

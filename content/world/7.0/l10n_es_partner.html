@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Adaptación de los clientes, proveedores y bancos para España</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        img{
+            width: 64px;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+      <div class="container center-block">
+
+        <div class="thumbnail pull-right">
+          <img class="img-rounded" src="openerp-l10n-es-partner.png"></img>
+        </div>
+        <h1>Adaptación de los clientes, proveedores y bancos para España</h1>
+        <p>Spanish localization team</p>
+        <p></p>
+
+      </div>
+    </div>
+
+    <div class="container">
+<div class="section" id="funcionalidad">
+<h1>Funcionalidad:</h1>
+<blockquote>
+<ul class="simple">
+<li>Añade el campo <em>Nombre comercial</em> a las empresas y permite buscar por él.</li>
+<li>Convierte el NIF a mayúsculas.</li>
+<li>Añade los campos nombre largo, NIF y web a los bancos.</li>
+<li>Añade los datos de los bancos españoles extraídos del registro oficial del
+Banco de España (<a class="reference external" href="http://goo.gl/mtx6ic">http://goo.gl/mtx6ic</a>). Ult. actualización: 2013.</li>
+<li>Permite validar las cuentas bancarias españolas. Para ello, se añade un
+campo de país a las cuentas bancarias de las empresas y se realizan
+validaciones cuando el país es España.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="funcionamiento-de-la-validacion-de-la-cuenta-bancaria-para-cuentas-espanolas">
+<h1>Funcionamiento de la validación de la cuenta bancaria para cuentas españolas:</h1>
+<blockquote>
+<ul class="simple">
+<li>Se comprueba si la cuenta consta de 20 dígitos (con o sin espacios).</li>
+<li>Si no los tiene, se devuelve un error de longitud incorrecta.</li>
+<li>Si los dígitos son 20, se calculan los dos dígitos de control (DC) y se
+comprueba que coinciden con los introducidos.</li>
+<li>Si el DC no coincide, se devuelve un error de que la cuenta es incorrecta.</li>
+<li>Si el DC es correcto, presenta el resultado con el formato
+&quot;1234 5678 06 1234567890&quot;</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="funcionamiento-de-la-validacion-de-la-cuenta-bancaria-para-cuentas-iban">
+<h1>Funcionamiento de la validación de la cuenta bancaria para cuentas IBAN:</h1>
+<blockquote>
+<ul class="simple">
+<li>Se limpia la cuenta de espacios.</li>
+<li>Se divide lo introducido en bloques de 4 caracteres.</li>
+</ul>
+</blockquote>
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

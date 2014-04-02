@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Account Move Line XLS export</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        img{
+            width: 64px;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+      <div class="container center-block">
+
+        <div class="thumbnail pull-right">
+          <img class="img-rounded" src="openerp-account-move-line-report-xls.png"></img>
+        </div>
+        <h1>Account Move Line XLS export</h1>
+        <p>Noviat</p>
+        <p></p>
+
+      </div>
+    </div>
+
+    <div class="container">
+<p>This module adds a button on the journal items ('account.move.line') list view
+in order to export the selected lines.</p>
+<p>If you are installing this module manually, you need also the <strong>report_xls</strong>
+module located in:
+<a class="reference external" href="https://launchpad.net/openerp-reporting-engines">https://launchpad.net/openerp-reporting-engines</a></p>
+<div class="section" id="report-customisation">
+<h1>Report customisation</h1>
+<p>The Excel export can be tailored to your exact needs via the following methods
+of the 'account.move.line' object:</p>
+<ul>
+<li><p class="first"><strong>_report_xls_fields</strong></p>
+<p>Add/drop columns or change order from the list of columns that are defined
+in the Excel template.</p>
+<p>The following fields are defined in the Excel template:</p>
+<blockquote>
+<p>move, name, date, journal, period, partner, account,
+date_maturity, debit, credit, balance,
+reconcile, reconcile_partial, analytic_account,
+ref, partner_ref, tax_code, tax_amount, amount_residual,
+amount_currency, currency_name, company_currency,
+amount_residual_currency, product, product_ref', product_uom, quantity,
+statement, invoice, narration, blocked</p>
+</blockquote>
+</li>
+<li><p class="first"><strong>_report_xls_template</strong></p>
+<p>Change/extend the Excel template.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="customisation-assistance">
+<h1>Customisation assistance</h1>
+<p>Contact <a class="reference external" href="mailto:info&#64;noviat.com">info&#64;noviat.com</a> for help with the customisation and/or development
+of Excel reports in OpenERP.</p>
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

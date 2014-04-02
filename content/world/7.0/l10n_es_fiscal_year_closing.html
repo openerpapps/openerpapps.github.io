@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Cierre de ejercicio fiscal para España</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        img{
+            width: 64px;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+      <div class="container center-block">
+
+        <div class="thumbnail pull-right">
+          <img class="img-rounded" src="openerp-l10n-es-fiscal-year-closing.png"></img>
+        </div>
+        <h1>Cierre de ejercicio fiscal para España</h1>
+        <p>Pexego</p>
+        <p></p>
+
+      </div>
+    </div>
+
+    <div class="container">
+<p>Reemplaza el asistente por defecto de OpenERP para el cierre contable (del
+módulo <em>account</em>) por un asistente todo en uno más avanzado que permite:</p>
+<blockquote>
+<ul class="simple">
+<li>Comprobar asientos descuadrados.</li>
+<li>Comprobar fechas y periodos incorrectos de los apuntes.</li>
+<li>Comprobar si hay asientos sin asentar en el ejercicio a cerrar.</li>
+<li>Crear el asiento de pérdidas y ganancias.</li>
+<li>Crear el asiento de pérdidas y ganancias de patrimonio neto.</li>
+<li>Crear el asiento de cierre.</li>
+<li>Crear el asiento de apertura.</li>
+</ul>
+</blockquote>
+<p>Permite configurar todos los parámetros para la realización de los asientos,
+aunque viene preconfigurado para el actual plan de cuentas español.</p>
+<p>Para la creación de los asientos, se tiene en cuenta el método de cierre
+definido en los tipos de cuenta (siempre que la cuenta no sea de tipo view):</p>
+<blockquote>
+<ul class="simple">
+<li>Ninguno: No se realiza ningún cierre para esa cuenta.</li>
+<li>Saldo: Crea un apunte para la cuenta con el saldo del ejercicio.</li>
+<li>No conciliados: Crea un apunte por cada empresa con saldo para la cuenta.</li>
+<li>Detalle: No soportado.</li>
+</ul>
+</blockquote>
+<p>También conserva el estado del cierre, por lo que el usuario puede cancelar y
+deshacer las operaciones fácilmente.</p>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
