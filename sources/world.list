@@ -21,3 +21,4 @@
 
 7.0,eficent-openerp-project-management,lp:eficent-openerp-project-management/7.0
 7.0,neobis-addons,lp:neobis-addons/7.0
+7.0,el2de-openerp70-addons,https://github.com/EL2DE/openerp70-addons.git,git
