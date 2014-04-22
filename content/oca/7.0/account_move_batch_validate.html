@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Account Move Batch Validate</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Account Move Batch Validate</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Account Move Batch Validate account_move_batch_validate</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Camptocamp</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="http://www.camptocamp.com">http://www.camptocamp.com</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>0.2</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>account, account_default_draft_move, connector</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>account-financial-tools</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<blockquote>
+<p>Account Move Batch Validate</p>
+<p>This module provides a wizard to post many Journal Entries in batch. it
+uses the queue system introduced by the OpenERP Connector to handle a
+big quantity of moves in batch.</p>
+<p>The module account_default_draft_move introdoces a workflow where the
+Journal Entries are always entered in OpenERP in draft state, and the
+posting happens later, for example at the end of the period. The core
+account module provides a wizard to post all the moves in the period,
+but that is problematic when there are many moves.</p>
+<p>The posting of a move takes some time, and doing that synchronously,
+in one transaction is problematic.</p>
+<p>In this module, we leverage the power of the queue system of the
+OpenERP Connector, that can be very well used without other concepts
+like Backends and Bindings.</p>
+<p>This approach provides many advantages, similar to the ones we get
+using that connector for e-commerce:</p>
+<ul class="simple">
+<li>Asynchronous: the operation is done in background, and users can
+continue to work.</li>
+<li>Dedicated workers: the queued jobs are performed by specific workers
+(processes). This is good for a long task, since the main workers are
+busy handling HTTP requests and can be killed if operations take
+too long, for example.</li>
+<li>Multiple transactions: this is an operation that doesn't need to be
+atomic, and if a line out of 100,000 fails, it is possible to catch
+it, see the error message, and fix the situation. Meanwhile, all
+other jobs can proceed.</li>
+</ul>
+</blockquote>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

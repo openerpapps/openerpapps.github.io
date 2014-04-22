@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Newsletters</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Newsletters</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Newsletters newsletter</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Therp BV</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="http://www.therp.nl">http://www.therp.nl</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>1.0</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>email_template, web_ckeditor4</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>openerp-crm</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<p>With this addon, you can send HTML-formatted mass emails to your customers.
+While it was developed with primarily newsletters in mind, it works for
+arbitrary objects and arbitrary content.</p>
+<div class="section" id="preparations">
+<h1>Preparations</h1>
+<p>Under Sales/Configuration/Newsletter types, review the default one or create a
+new one. You'll have to fill in a name, a model, a domain expression on that
+model, an email template (have a look a the default newsletter type's email
+template to see how this might look like) and the address that should show up
+as the sender's address.</p>
+<p>If you fill in a group in the type's groups-field, only users which are a
+member of said group are allowed to send a newsletter of this type. See below
+for details.</p>
+<p>Finally, click 'Show recipient objects' to check the list of records that will
+receive a newsletter of this type. We work with dynamic selections here, so
+this list ist not fixed and will be evaluated every time you send a newsletter.</p>
+</div>
+<div class="section" id="usage">
+<h1>Usage</h1>
+<p>After a newsletter type is configured, the handling is pretty straightworfard:
+Go to Sales/Newsletters/Newsletters and create a new one. Choose the type you
+configured before and fill in a subject.</p>
+<p>Often, a template will be chosen that enforces a certain layout for different
+subsections of your text. That's why the text is broken up into an intro, an
+outro and topics with optional heading in between. This way, you can put most
+of the layout into the template and leave only the interesting layout to your
+users.</p>
+<p>A note on images: If you upload an image via the editor, it will be embedded
+as dataurl into the resulting email. This is good for your customers' privacy,
+but bad for bandwidth, so take care to chose reasonable image sizes.</p>
+<p>It is mandatory that you click on 'Preview' before you are allowed to finally
+send the newsletter. The sending process uses OpenERP's standard email queue.</p>
+</div>
+<div class="section" id="security">
+<h1>Security</h1>
+<p>There are three groups defined:</p>
+<dl class="docutils">
+<dt>newsletter editor</dt>
+<dd>A user who can create a newsletter and add/edit topics</dd>
+<dt>newsletter sender</dt>
+<dd>A user who may send newsletters. Note that if a newsletter type is
+restricted to certain groups, the user has to be a newsletter sender and
+be a member of one of the groups given in the newsletter type</dd>
+<dt>newsletter manager</dt>
+<dd>A user who may edit newsletter types</dd>
+</dl>
+<p>Note that the groups are listed in order of inheritance, so a newsletter sender
+always also is an editor and a manager is a sender as well as an editor.</p>
+</div>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

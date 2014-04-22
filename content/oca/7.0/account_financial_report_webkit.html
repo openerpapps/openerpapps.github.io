@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Financial Reports - Webkit</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Financial Reports - Webkit</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Financial Reports - Webkit account_financial_report_webkit</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Camptocamp</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="http://www.camptocamp.com">http://www.camptocamp.com</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>1.1.0</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>account, report_webkit</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>account-financial-report</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="financial-reports-webkit">
+<h1>Financial Reports - Webkit</h1>
+<dl class="docutils">
+<dt>This module adds or replaces the following standard OpenERP financial reports:</dt>
+<dd><ul class="first last simple">
+<li>General ledger</li>
+<li>Trial Balance (simple or comparative view)</li>
+<li>Partner ledger</li>
+<li>Partner balance</li>
+<li>Open invoices report</li>
+<li>Aged Partner Balance</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="main-improvements-per-report">
+<h2>Main improvements per report:</h2>
+<p>The General ledger: details of all entries posted in your books sorted by account.</p>
+<ul class="simple">
+<li>Filter by account is available in the wizard (no need to go to the
+Chart of Accounts to do this anymore) or by View account (the report
+will display all regular children accounts) i.e. you can select all
+P&amp;L accounts.</li>
+<li>The report only prints accounts with moves OR with a non
+null balance. No more endless report with empty accounts (field:
+display account is hidden)</li>
+<li>initial balance computation on the fly if no open entry posted</li>
+<li>Thanks to a new checkbox in the account form, you will have the
+possibility to centralize any account you like.  This means you do
+not want to see all entries posted under the account ‘VAT on sales’;
+you will only see aggregated amounts by periods.</li>
+<li>Counterpart account is displayed for each transaction (3 accounts max.)
+to ease searching.</li>
+<li>Better ergonomy on the wizard: important information is displayed in
+the top part, filters are in the middle, and options are in the
+bottom or on a separate tab. There is more specific filtering on
+separate tabs. No more unique wizard layout for all financial
+reports (we have removed the journal tab for the GL report)</li>
+<li>improved report style</li>
+</ul>
+<p>The partner ledger: details of entries relative to payable &amp;
+receivable accounts posted in your books sorted by account and
+partner.</p>
+<ul class="simple">
+<li>Filter by partner now available</li>
+<li>Now you can see Accounts then Partner with subtotals for each
+account allowing you to check you data with trial balance and
+partner balance for instance. Accounts are ordered in the same way as
+in the Chart of account</li>
+<li>Period have been added (date only is not filled in since date can be
+outside period)</li>
+<li>Reconciliation code added</li>
+<li>Subtotal by account</li>
+<li>Alphabetical sorting (same as in partner balance)</li>
+</ul>
+<p>Open invoice report : other version of the partner ledger showing
+unreconciled / partially reconciled entries.</p>
+<ul class="simple">
+<li>Possibility to print unreconciled transactions only at any date in
+the past (thanks to the new field: <cite>last_rec_date</cite> which computes
+the last move line reconciliation date). No more pain to get open
+invoices at the last closing date.</li>
+<li>no initial balance computed because the report shows open invoices
+from previous years.</li>
+</ul>
+<p>The Trial balance: list of accounts with balances</p>
+<ul class="simple">
+<li>You can either see the columns: initial balance, debit, credit,
+end balance or compare balances over 4 periods of your choice</li>
+<li>You can select the &quot;opening&quot; filter to get the opening trial balance
+only</li>
+<li>If you create an extra virtual chart (using consolidated account) of
+accounts for your P&amp;L and your balance sheet, you can print your
+statutory accounts (with comparison over years for instance)</li>
+<li>If you compare 2 periods, you will get the differences in values and
+in percent</li>
+</ul>
+<p>The Partner balance: list of account with balances</p>
+<ul class="simple">
+<li>Subtotal by account and partner</li>
+<li>Alphabetical sorting (same as in partner balance)</li>
+</ul>
+<p>Aged Partner Balance: Summary of aged open amount per partner</p>
+<p>This report is an accounting tool helping in various tasks.
+You can credit control or partner balance provisions computation for instance.</p>
+<p>The aged balance report allows you to print balances per partner
+like the trial balance but add an extra information :</p>
+<ul>
+<li><p class="first">It will split balances into due amounts
+(due date not reached à the end date of the report) and overdue amounts
+Overdue data are also split by period.</p>
+</li>
+<li><p class="first">For each partner following columns will be displayed:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Total balance (all figures must match with same date partner balance report).</dt>
+<dd><p class="first last">This column equals the sum of all following columns)</p>
+</dd>
+</dl>
+</li>
+</ul>
+<blockquote>
+<ul class="simple">
+<li>Due</li>
+<li>Overdue &lt;= 30 days</li>
+<li>Overdue &lt;= 60 days</li>
+<li>Overdue &lt;= 90 days</li>
+<li>Overdue &lt;= 120 days</li>
+<li>Older</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>Hypothesis / Contraints of aged partner balance</p>
+<ul class="simple">
+<li>Overdues columns will be by default  be based on 30 days range fix number of days.
+This can be changed by changes the RANGES constraint</li>
+<li>All data will be displayed in company currency</li>
+<li>When partial payments, the payment must appear in the same colums than the invoice
+(Except if multiple payment terms)</li>
+<li>Data granularity: partner (will not display figures at invoices level)</li>
+<li>The report aggregate data per account with sub-totals</li>
+<li>Initial balance must be calculated the same way that
+the partner balance / Ignoring the opening entry
+in special period (idem open invoice report)</li>
+<li>Only accounts with internal type payable or receivable are considered
+(idem open invoice report)</li>
+<li>If maturity date is null then use move line date</li>
+</ul>
+</div>
+<div class="section" id="limitations">
+<h2>Limitations:</h2>
+<p>In order to run properly this module makes sure you have installed the
+library <cite>wkhtmltopdf</cite> for the pdf rendering (the library path must be
+set in a System Parameter <cite>webkit_path</cite>).</p>
+<p>Initial balances in these reports are based either on opening entry
+posted in the opening period or computed on the fly. So make sure
+that your past accounting opening entries are in an opening period.
+Initials balances are not computed when using the Date filter (since a
+date can be outside its logical period and the initial balance could
+be different when computed by data or by initial balance for the
+period). The opening period is assumed to be the Jan. 1st of the year
+with an opening flag and the first period of the year must start also
+on Jan 1st.</p>
+<p>Totals for amounts in currencies are effective if the partner belongs to
+an account with a secondary currency.</p>
+<p>HTML headers and footers are deactivated for these reports because of
+an issue in wkhtmltopdf
+(<a class="reference external" href="http://code.google.com/p/wkhtmltopdf/issues/detail?id=656">http://code.google.com/p/wkhtmltopdf/issues/detail?id=656</a>) Instead,
+the header and footer are created as text with arguments passed to
+wkhtmltopdf. The texts are defined inside the report classes.</p>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Service Level Agreements</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Service Level Agreements</h1>
+        <p class="lead">Define SLAs for your Contracts</p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Service Level Agreements project_sla</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Daniel Reis</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href=""></a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>1.0</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>project_issue</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>contract-management</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="contract-slas">
+<h1>Contract SLAs</h1>
+<p>SLAs are assigned to Contracts, on the Analytic Account form, SLA Definition
+separator. This is also where new SLA Definitions are created.</p>
+<p>One Contract can have several SLA Definitions attached, allowing for
+&quot;composite SLAs&quot;. For example, a contract could have a Response Time SLA (time
+to start resolution) and a Resolution Time SLA (time to close request).</p>
+</div>
+<div class="section" id="sla-controlled-documents">
+<h1>SLA Controlled Documents</h1>
+<p>Only Project Issue documents are made SLA controllable.
+However, a framework is made available to easily build extensions to make
+other documents models SLA controlled.</p>
+<p>SLA controlled documents have attached information on the list of SLA rules
+they should meet (more than one in the case for composite SLAs) and a summary
+SLA status:</p>
+<blockquote>
+<ul class="simple">
+<li>&quot;watching&quot; the service level (it has SLA requirements to meet)</li>
+<li>under &quot;warning&quot; (limit dates are close, special attention is needed)</li>
+<li>&quot;failed&quot; (one on the SLA limits has not been met)</li>
+<li>&quot;achieved&quot; (all SLA limits have been met)</li>
+</ul>
+</blockquote>
+<p>Transient states, such as &quot;watching&quot; and &quot;warning&quot;, are regularly updated by
+a hourly scheduled job, that reevaluates the warning and limit dates against
+the current time and changes the state when find dates that have been exceeded.</p>
+<p>To decide what SLA Definitions apply for a specific document, first a lookup
+is made for a <tt class="docutils literal">analytic_account_id</tt> field. If not found, then it will
+look up for the <tt class="docutils literal">project_id</tt> and it's corresponding <tt class="docutils literal">analytic_account_id</tt>.</p>
+<p>Specifically, the Service Desk module introduces a Analytic Account field for
+Project Issues. This makes it possible for a Service Team (a &quot;Project&quot;) to
+have a generic SLA, but at the same time allow for some Contracts to have
+specific SLAs (such as the case for &quot;premium&quot; service conditions).</p>
+</div>
+<div class="section" id="sla-definitions-and-rules">
+<h1>SLA Definitions and Rules</h1>
+<p>New SLA Definitions are created from the Analytic Account form, SLA Definition
+field.</p>
+<p>Each definition can have one or more Rules.
+The particular rule to use is decided by conditions, so that you can set
+different service levels based on request attributes, such as Priority or
+Category.
+Each rule condition is evaluated in &quot;sequence&quot; order, and the first onea to met
+is the one to be used.
+In the simplest case, a single rule with no condition is just what is needed.</p>
+<p>Each rule sets a number of hours until the &quot;limit date&quot;, and the number of
+hours until a &quot;warning date&quot;. The former will be used to decide if the SLA
+was achieved, and the later can be used for automatic alarms or escalation
+procedures.</p>
+<p>Time will be counted from creation date, until the &quot;Control Date&quot; specified for
+the SLA Definition.  That would usually be the &quot;Close&quot; (time until resolution)
+or the &quot;Open&quot; (time until response) dates.</p>
+<p>The working calendar set in the related Project definitions will be used (see
+the &quot;Other Info&quot; tab). If none is defined, a builtin &quot;all days, 8-12 13-17&quot;
+default calendar is used.</p>
+<p>A timezone and leave calendars will  also used, based on either the assigned
+user (document's <cite>user_id</cite>) or on the current user.</p>
+</div>
+<div class="section" id="setup-checklist">
+<h1>Setup checklist</h1>
+<p>The basic steps to configure SLAs for a Project are:</p>
+<blockquote>
+<ul class="simple">
+<li>Set Project's Working Calendar, at Project definitions, &quot;Other Info&quot; tab</li>
+<li>Go to the Project's Analytic Account form; create and set SLA Definitions</li>
+<li>Use the &quot;Reapply SLAs&quot; button on the Analytic Account form</li>
+<li>See Project Issue's calculated SLAs in the new &quot;Service Levels&quot; tab</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="credits-and-contributors">
+<h1>Credits and Contributors</h1>
+<blockquote>
+<ul class="simple">
+<li>Daniel Reis (<a class="reference external" href="https://launchpad.net/~dreis-pt">https://launchpad.net/~dreis-pt</a>)</li>
+<li>David Vignoni, author of the icon from the KDE 3.x Nuvola icon theme</li>
+</ul>
+</blockquote>
+</div>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Templates for email templates</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Templates for email templates</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Templates for email templates email_template_template</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Therp BV</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="http://therp.nl">http://therp.nl</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>1.0</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>email_template</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>server-env-tools</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<p>If an organisation's email layout is a bit more
+complicated, changes can be tedious when having to do that across several email
+templates. So this addon allows to define templates for mails that is referenced
+by other mail templates.
+This way we can put the layout parts into the template template and only content
+in the other templates. Changing the layout is then only a matter of changing
+the template template.</p>
+<div class="section" id="usage">
+<h1>Usage</h1>
+<p>Create an email template with the related document model 'Email Templates'. Now
+most of the fields gray out and you can only edit body_text and body_html. Be
+sure to use ${body_text} and ${body_html} respectively in your template
+template.</p>
+<p>Then select this newly created template templates in one of your actual
+templates.</p>
+<p>For example, create a template template</p>
+<pre class="literal-block">
+Example Corp logo
+Example Corp header
+${object.body_text} &lt;- this gets evaluated to the body_text of a template using this template template
+Example Corp
+Example street 42
+Example city
+Example Corp footer
+</pre>
+<p>Then in your template you write</p>
+<pre class="literal-block">
+Dear ${object.partner_id.name},
+
+Your order has been booked on date ${object.date} for a total amount of ${object.sum}.
+</pre>
+<p>And it will be evaluated to</p>
+<pre class="literal-block">
+Example Corp logo
+Example Corp header
+Dear Jane Doe,
+
+Your order has been booked on date 04/17/2013 for a total amount of 42.
+Example Corp
+Example street 42
+Example city
+Example Corp footer
+</pre>
+<p>Given the way evaluation works internally (body_text of the template template is evaluated two times, first with the instance of email.template of your own template, then with the object your template refers to), you can do some trickery if you know that a template template is always used with the same kind of model (that is, models that have the same field name):</p>
+<p>In your template template:</p>
+<pre class="literal-block">
+Dear ${'${object.name}'}, &lt;-- gets evaluated to &quot;${object.name}&quot; in the first step, then to the content of object.name
+${object.body_html}
+Best,
+Example Corp
+</pre>
+</div>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

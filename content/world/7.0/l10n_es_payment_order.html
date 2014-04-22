@@ -12,29 +12,96 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-        img{
-            width: 64px;
-        }
-    </style>
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
   </head>
 
   <body>
 
-    <div class="jumbotron">
-      <div class="container center-block">
-
-        <div class="thumbnail pull-right">
-          <img class="img-rounded" src="../../../assets/icon_blank.png"></img>
-        </div>
-        <h1>Exportación de ficheros bancarios CSB 19, 32, 34 y 58</h1>
-        <p>Acysos SL, Zikzakmedia SL, Pablo Rocandio, NaN·tic</p>
-        <p></p>
-
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">world / 7.0</h3>
       </div>
+
+      <div class="jumbotron">
+        <h1>Exportación de ficheros bancarios CSB 19, 32, 34 y 58</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Exportación de ficheros bancarios CSB 19, 32, 34 y 58 l10n_es_payment_order</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Acysos SL, Zikzakmedia SL, Pablo Rocandio, NaN·tic</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="www.zikzakmedia.com,www.acysos.com">www.zikzakmedia.com,www.acysos.com</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>1.6</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>base, account, account_payment_extension</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>openerp-spain</td>
+        </tr>
+
+      </table>
     </div>
 
-    <div class="container">
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
 <p>Módulo para la exportación de ficheros bancarios según las normas CSB 19 (recibos domiciliados), CBS 32 (descuento comercial), CSB 58 (anticipos de créditos) y CSB 34 (emisión de transferencias, nóminas, cheques, pagarés y pagos certificados) para poder ser enviados a la entidad bancaria.</p>
 <p>Crea un tipo de pago &quot;Recibo domiciliado&quot; con el código RECIBO_CSB. Este código es importante pues permite ejecutar el asistente de creación del fichero de remesas cuando se presiona el botón &quot;Realizar pagos&quot; en la orden de pagos o remesa.</p>
 <p>También crea los tipos de pago &quot;Transferencia&quot; (TRANSFERENCIA_CSB), &quot;Pagaré&quot; (PAGARE_CSB), &quot;Cheque&quot; (CHEQUE_CSB), &quot;Pago certificado&quot; (PAGO_CERTIFICADO_CSB).</p>
@@ -49,7 +116,18 @@
 <p>También se proporciona un informe para imprimir un listado de los pagos/cobros de la orden de pago/cobro (remesa).</p>
 <p><strong>AVISO:</strong> Si está realizando la instalación de forma local (no desde Aplicaciones), este módulo requiere el módulo <em>account_payment_extension</em>, disponible en:</p>
 <p><a class="reference external" href="https://launchpad.net/account-payment">https://launchpad.net/account-payment</a></p>
+</div>
+</body>
+</html>
 
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript

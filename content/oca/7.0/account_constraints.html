@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Account Constraints</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Account Constraints</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Account Constraints account_constraints</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Camptocamp</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="http://www.camptocamp.com">http://www.camptocamp.com</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>1.0</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>account</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>account-financial-tools</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="account-constraints">
+<h1>Account Constraints</h1>
+<p>Add constraints in the accounting module of OpenERP to avoid bad usage
+by users that lead to corrupted datas. This is based on our experiences
+and legal state of the art in other software.</p>
+<p>Summary of constraints are:</p>
+<ul class="simple">
+<li>Add a constraint on account move: you cannot pickup a date that is not
+in the fiscal year of the concerned period</li>
+<li>For manual entries when multicurrency:<ol class="loweralpha">
+<li>Validation on the use of the 'Currency' and 'Currency Amount'
+fields as it is possible to enter one without the other</li>
+<li>Validation to prevent a Credit amount with a positive
+'Currency Amount', or a Debit with a negative 'Currency Amount'</li>
+</ol>
+</li>
+<li>Add a check on entries that user cannot provide a secondary currency
+if the same than the company one.</li>
+<li>Remove the possibility to modify or delete a move line related to an
+invoice or a bank statement, no matter what the status of the move
+(draft, validated or posted). This is useful in a standard context but
+even more if you're using <cite>account_default_draft_move</cite>. This way you ensure
+that the user cannot make mistakes even in draft state, he must pass through the
+parent object to make his modification.</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

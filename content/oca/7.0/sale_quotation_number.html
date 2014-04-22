@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Sale Quotation Numeration</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Sale Quotation Numeration</h1>
+        <p class="lead">Different sequence for sale quotations</p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Sale Quotation Numeration sale_quotation_number</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>[u'Elico Corp', u'Agile Business Group']</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="http://www.openerp.net.cn">http://www.openerp.net.cn</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>1.1</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>sale</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>sale-wkfl</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="this-module-adds-a-sale-quotation-sequence">
+<h1>This module adds a sale quotation sequence.</h1>
+<p>Defining.</p>
+<p><em>Sale Quotation:</em> Sale process in draft stage just informing prices and element
+of communication.
+<em>Sale Order:</em> Sale process confirmed, the customer already have a compromise with
+us in terms of pay an invoice and receive our product or service.</p>
+<p>Originally OpenERP manage only 1 sequence for this 2 documents, then the sales
+order won and lost manage the same sequence losting almost all lost quotations
+in terms of sequences, making so difficult understand qith a quick view if we
+are good or bad in terms of logistic and sale process already confirmed.</p>
+<p>Technical Explanation:</p>
+<p>When you create a quotation, it is numbered using the 'sale.quotation'
+sequence.  When you confirm a quotation, its orginal number is saved in the
+'origin' field and the sale order gets a new number, retrieving it from
+'sale.order' sequence.</p>
+<p>With Openerp Base.</p>
+<p>Sale Quotation 1 Number = SO001
+Sale Quotation 2 Number = SO002
+Sale Quotation 3 Number = SO003
+Sale Quotation 4 Number = SO004</p>
+<p>Sale Quotation 2 Confirmed = Number for Sale Order SO004</p>
+<p>With Openerp + This Module.</p>
+<p>Sale Quotation 1 Number = SQ001
+Sale Quotation 2 Number = SQ002
+Sale Quotation 3 Number = SQ003
+Sale Quotation 4 Number = SQ004</p>
+<p>Sale Quotation 2 Confirmed = Number for Sale Order SO001 from Sale Quotation
+SQ002</p>
+<p>Sale Quotation 1 Confirmed = Number for Sale Order SO002 from Sale Quotation
+SQ001</p>
+<p>Sale Quotation 4 Confirmed = Number for Sale Order SO003 from Sale Quotation
+SQ004</p>
+</div>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

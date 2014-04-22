@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Web Context Tunnel</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Web Context Tunnel</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Web Context Tunnel web_context_tunnel</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Akretion</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href=""></a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>2.0</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>web</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>server-env-tools</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="web-context-tunnel">
+<h1>Web Context Tunnel.</h1>
+<div class="section" id="the-problem-with-openerp-on-changes">
+<h2>The problem with OpenERP on_changes</h2>
+<p>OpenERP uses to pass on_change Ajax events arguments using positional
+arguments. This is annoying as modules often need to pass extra arguments
+that are not present in the base on_change signatures. As soon as two modules
+try to alter this signature to add their extra arguments, they are incompatible
+between them unless some extra glue module make them compatible again by
+taking all extra arguments into account. But this leads to a combinatorial
+explosion to make modules compatible again.</p>
+</div>
+<div class="section" id="the-solution">
+<h2>The solution</h2>
+<p>This module provides a simple work around that will work in most of the cases.
+In fact it works if the base on_change is designed to pass the context
+argument. Else it won't work and you should go the old way. But in any case
+it's a bad practice if an on_change doesn't pass the context argument and you
+can certainly rant about these bad on_changes to the the context added in the
+arguments.</p>
+<p>So for an on_change passing the context, how does this module works?</p>
+<p>Well OpenERP already has an elegant solution for an extension module to alter
+an XML attributes: put an extension point in the view using
+position=&quot;attributes&quot; and then redefine the attribute. That is already used at
+several places to replace the &quot;context&quot; attribute that the client will send to
+the server.</p>
+<p>The idea here is to wrap the extra arguments needed by your on_change inside
+that context dictionary just as it were a regular Python kwargs. That context
+should then be automatically propagated accross the on_change call chain,
+no matter of the module order and without any need to hack any on_change
+signature.</p>
+<p>The issue with just position=&quot;attributes&quot; and redefining the context, is that
+again, if two independent modules redefine the context, they are incompatible
+unless a third module accounts for both of them.</p>
+<p>But with this module, an extension point can now use position=&quot;attributes&quot; and
+instead of redefining the &quot;context&quot; attribute, you will now just define a new
+&quot;context_foo&quot; attribute this way:
+&lt;attribute name=&quot;context_foo&quot;&gt;{'my_extra_field': my_extra_field}&lt;/attribute&gt;.</p>
+<p>This module modifies the web client in such a way that before sending the Ajax
+on_change event request to the server, all the node attributes starting with
+&quot;context&quot; are merged into a single context dictionnary, keeping the keys and
+values from all extensions. In the rare case a module really wants to override
+the value in context, then it needs to still override the original context
+attribute (or the other original attribute).</p>
+<p>And of course, if you should call your on_change by API or webservice instead
+of using the web client, simply ensure you are wrapping the required extra
+arguments in the context dictionary.</p>
+</div>
+<div class="section" id="tests">
+<h2>Tests</h2>
+<p>This module comes with a simple test in static/test/context_tunnel.js.
+To run it, open the page /web/tests?mod=web_context_tunnel in your browser
+as explained here <a class="reference external" href="https://doc.openerp.com/trunk/web/testing">https://doc.openerp.com/trunk/web/testing</a>
+It should also by picked by the Python testing when testing with PhantomJS.</p>
+<p>As for testing modules using web_context_tunnel with YAML, yes it's possible.
+In fact you need to manually mimic the new web-client behavior by manually
+ensuring you add the extra context keys you will need later in your on_change.
+For instance, before the on_change is called, you can alter the context with
+a !python statement like context.update({'my_extra_field': my_extra_field}).</p>
+<p>You can see an example of module conversion to use web_context_tunnel here
+for instance:
+<a class="reference external" href="https://github.com/openerpbrasil/l10n_br_core/compare/develop...feature%2Fsale-web-context-tunnel">https://github.com/openerpbrasil/l10n_br_core/compare/develop...feature%2Fsale-web-context-tunnel</a></p>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

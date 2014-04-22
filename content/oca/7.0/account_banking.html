@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Account Banking</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Account Banking</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Account Banking account_banking</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Banking addons community</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="https://launchpad.net/banking-addons">https://launchpad.net/banking-addons</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>0.3</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>account_voucher</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>banking-addons</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<blockquote>
+<p>Module to do banking.</p>
+<p>This modules tries to combine all current banking import and export
+schemes. Rationale for this is that it is quite common to have foreign
+bank account numbers next to national bank account numbers. The current
+approach, which hides the national banking interface schemes in the
+l10n_xxx modules, makes it very difficult to use these simultanious.
+A more banking oriented approach seems more logical and cleaner.</p>
+<p>Changes to default OpenERP:</p>
+<ul>
+<li><p class="first">Puts focus on the real life messaging with banks:
++ Bank statement lines upgraded to independent bank transactions.
++ Banking statements have no special accountancy meaning, they're just</p>
+<blockquote>
+<p>message envelopes for a number of bank transactions.</p>
+</blockquote>
+<ul class="simple">
+<li>Bank statements can be either encoded by hand to reflect the document
+version of Bank Statements, or created as an optional side effect of
+importing Bank Transactions.</li>
+</ul>
+</li>
+<li><p class="first">Preparations for SEPA:
++ IBAN accounts are the standard in the SEPA countries
++ local accounts are derived from SEPA (excluding Turkey) but are</p>
+<blockquote>
+<p>considered to be identical to the corresponding SEPA account.</p>
+</blockquote>
+<ul class="simple">
+<li>Banks are identified with either Country + Bank code + Branch code or BIC</li>
+<li>Each bank can have its own pace in introducing SEPA into their
+communication with their customers.</li>
+<li>National online databases can be used to convert BBAN's to IBAN's.</li>
+<li>The SWIFT database is consulted for bank information.</li>
+</ul>
+</li>
+<li><p class="first">Adds dropin extensible import facility for bank communication in:
+- Drop-in input parser development.
+- MultiBank (NL) format transaction files available as</p>
+<blockquote>
+<p>account_banking_nl_multibank,</p>
+</blockquote>
+</li>
+<li><p class="first">Extends payments for digital banking:
++ Adapted workflow in payments to reflect banking operations
++ Relies on account_payment mechanics to extend with export generators.
+- ClieOp3 (NL) payment and direct debit orders files available as</p>
+<blockquote>
+<p>account_banking_nl_clieop</p>
+</blockquote>
+</li>
+<li><p class="first">Additional features for the import/export mechanism:
++ Automatic matching and creation of bank accounts, banks and partners,</p>
+<blockquote>
+<p>during import of statements.</p>
+</blockquote>
+<ul class="simple">
+<li>Automatic matching with invoices and payments.</li>
+<li>Sound import mechanism, allowing multiple imports of the same
+transactions repeated over multiple files.</li>
+<li>Journal configuration per bank account.</li>
+<li>Business logic and format parsing strictly separated to ease the
+development of new parsers.</li>
+<li>No special configuration needed for the parsers, new parsers are
+recognized and made available at server (re)start.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

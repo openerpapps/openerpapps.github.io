@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Project Scrum Management</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">world / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Project Scrum Management</h1>
+        <p class="lead">Projects, Scrum</p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Project Scrum Management project_scrum</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>David DRAPEAU</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="https://github.com/ddrapeau/openerp70-addons">https://github.com/ddrapeau/openerp70-addons</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>1.3</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>base, mail, project</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>el2de-openerp70-addons</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<p>Scrum Module for OpenERP 7.0 (developped by David DRAPEAU &lt;<a class="reference external" href="mailto:david.drapeau&#64;el2de.com.com">david.drapeau&#64;el2de.com.com</a>&gt;)</p>
+<dl class="docutils">
+<dt>This application respects the scrum.org protocol and has been developed and is maintened by ITIL Certified Member (in course of certification).</dt>
+<dd><ul class="first last simple">
+<li>Linked to OpenERP native module 'project'</li>
+</ul>
+</dd>
+<dt>Manage</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Project roles</dt>
+<dd><ul class="first last simple">
+<li>Scrum Master</li>
+<li>Product Owner</li>
+<li>Development Team (inherits from project module)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Releases</p>
+</li>
+<li><dl class="first docutils">
+<dt>Sprints</dt>
+<dd><ul class="first last simple">
+<li>date_start and date_stop</li>
+<li>standup meetings for each user of team (TODO)</li>
+<li>sprint review</li>
+<li>sprint retrospective</li>
+<li>planned velocity (you write velocity desired and displayed on Sprint Velocity Chart)</li>
+<li>effective velocity (it is computed by all users stories affected to the sprint)</li>
+<li>effective velocity done (it is computed by all users stories done and displayed on Sprint Velocity Chart)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Product Backlog (users stories)</dt>
+<dd><ul class="first last simple">
+<li>new kanban view</li>
+<li>date_open and date_done</li>
+<li>story complexity points</li>
+<li>text area for describe tests acceptance</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Display charts</dt>
+<dd><ul class="first last simple">
+<li>Burdown Chart (based on story points)</li>
+<li>Sprints Velocity (for each Scrum project)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Sandbox</dt>
+<dd><ul class="first last simple">
+<li>a developer of development team can add a user story to sandbox</li>
+<li>the product owner can valid it (transfer into product backlog) or delete it</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Thanks to report questions to <a class="reference external" href="mailto:david.drapeau&#64;el2de.com">david.drapeau&#64;el2de.com</a></p>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

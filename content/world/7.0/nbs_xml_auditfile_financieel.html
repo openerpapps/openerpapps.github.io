@@ -12,32 +12,101 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-        img{
-            width: 64px;
-        }
-    </style>
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
   </head>
 
   <body>
 
-    <div class="jumbotron">
-      <div class="container center-block">
-
-        <div class="thumbnail pull-right">
-          <img class="img-rounded" src="openerp-nbs-xml-auditfile-financieel.png"></img>
-        </div>
-        <h1>Neobis XML Auditfile Financieel</h1>
-        <p>Neobis ICT Dienstverlening B.V.</p>
-        <p></p>
-
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">world / 7.0</h3>
       </div>
+
+      <div class="jumbotron">
+        <h1>Neobis XML Auditfile Financieel</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Neobis XML Auditfile Financieel nbs_xml_auditfile_financieel</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Neobis ICT Dienstverlening B.V.</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="http://www.neobis.nl">http://www.neobis.nl</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>1.1</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>account, document, xml_template</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>neobis-addons</td>
+        </tr>
+
+      </table>
     </div>
 
-    <div class="container">
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="neobis-xml-auditfile-financieel">
+<h1>Neobis XML Auditfile Financieel</h1>
 <p>This module exports financial (accounting) information from your OpenERP system to a .XAF file.</p>
 <div class="section" id="this-module-is-considered-to-be-in-beta">
-<h1>This module is considered to be in Beta</h1>
+<h2>This module is considered to be in Beta</h2>
 <p>It does so according to the <a class="reference external" href="http://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/aangifte_betalen_en_toezicht/toezicht/handhaving_en_controle/belastingcontrole_met_de_auditfile">standard set by the dutch tax authorities</a>.</p>
 <p>This module is tested with the default OpenERP dutch accounts (l10n_nl).
 But it should work with any config. It implements the minimum set needed to generate a valid XML.
@@ -53,7 +122,19 @@ created by Swing Entwicklung betrieblicher Informationssysteme GmbH, so thanks f
 </dl>
 <p><strong>Feel free to test and contribute to this module!</strong></p>
 </div>
+</div>
+</div>
+</body>
+</html>
 
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript

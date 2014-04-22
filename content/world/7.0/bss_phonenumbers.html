@@ -12,29 +12,98 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-        img{
-            width: 64px;
-        }
-    </style>
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
   </head>
 
   <body>
 
-    <div class="jumbotron">
-      <div class="container center-block">
-
-        <div class="thumbnail pull-right">
-          <img class="img-rounded" src="openerp-bss-phonenumbers.png"></img>
-        </div>
-        <h1>Phone Numbers</h1>
-        <p>Bluestar Solutions Sàrl</p>
-        <p></p>
-
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">world / 7.0</h3>
       </div>
+
+      <div class="jumbotron">
+        <h1>Phone Numbers</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Phone Numbers bss_phonenumbers</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Bluestar Solutions Sàrl</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="http://www.blues2.ch">http://www.blues2.ch</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>7.0.2.0-1</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>bss-phonenumbers-addons</td>
+        </tr>
+
+      </table>
     </div>
 
-    <div class="container">
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="well-formed-standard-phone-numbers-field">
+<h1>Well formed standard phone numbers field</h1>
 <p>Add an ORM field type &quot;phonenumber&quot; which ensures that all phone numbers will be stored in E.164 format (like &quot;+41327200890&quot;) and displayed
 in international format (like &quot;+41 32 720 08 90&quot;) with a RFC 3966 Tel URI (like &quot;<a class="reference external" href="tel:+41-32-720-08-90">tel:+41-32-720-08-90</a>&quot;). Many formats are recognized
 when the field is edited. After validation, the ORM field will transform the entered value in E.164 format before storing it.
@@ -45,7 +114,7 @@ With E.164 format for phone numbers in database, you can imagine server-side fea
 which have to be installed separately on your OpenERP server. python-phonenumbers is a Python port of the Java libphonenumber library by Google.</p>
 <p>See bss_partner_phone_numbers and bss_crm_phone_numbers for usage.</p>
 <div class="section" id="links">
-<h1>Links</h1>
+<h2>Links</h2>
 <ul class="simple">
 <li>E.164 format on Wikipedia : <a class="reference external" href="http://en.wikipedia.org/wiki/E.164">http://en.wikipedia.org/wiki/E.164</a></li>
 <li>RFC 3966 Tel URI : <a class="reference external" href="http://www.ietf.org/rfc/rfc3966.txt">http://www.ietf.org/rfc/rfc3966.txt</a></li>
@@ -54,7 +123,19 @@ which have to be installed separately on your OpenERP server. python-phonenumber
 <li>bss_partner_phone_numbers and bss_crm_phone_numbers sources : <a class="reference external" href="https://launchpad.net/bss-phonenumbers-addons">https://launchpad.net/bss-phonenumbers-addons</a></li>
 </ul>
 </div>
+</div>
+</div>
+</body>
+</html>
 
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript

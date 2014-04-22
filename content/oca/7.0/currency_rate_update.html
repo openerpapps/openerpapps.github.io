@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Currency Rate Update</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Currency Rate Update</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Currency Rate Update currency_rate_update</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Camptocamp</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="http://camptocamp.com">http://camptocamp.com</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>0.7</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>base, account</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>account-financial-tools</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<p>Import exchange rates from the Internet.</p>
+<p>The module is able to use 4 different sources:</p>
+<ol class="arabic simple">
+<li>Admin.ch
+Updated daily, source in CHF.</li>
+<li>European Central Bank (ported by Grzegorz Grzelak)
+The reference rates are based on the regular daily concertation procedure between
+central banks within and outside the European System of Central Banks,
+which normally takes place at 2.15 p.m. (14:15) ECB time. Source in EUR.
+<a class="reference external" href="http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html">http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html</a></li>
+<li>Yahoo Finance
+Updated daily</li>
+<li>Polish National Bank (Narodowy Bank Polski) (contribution by Grzegorz Grzelak)
+Takes official rates from www.nbp.pl. Adds rate table symbol in log.
+You should check when rates should apply to bookkeeping. If next day you should
+change the update hour in schedule settings because in OpenERP they apply from
+date of update (date - no hours).</li>
+<li>Banxico for USD &amp; MXN (created by Agustín Cruz)
+Updated daily</li>
+</ol>
+<dl class="docutils">
+<dt>In the roadmap <span class="classifier-delimiter">:</span> <span class="classifier">Google Finance.</span></dt>
+<dd>Updated daily from Citibank N.A., source in EUR. Information may be delayed.
+This is parsed from an HTML page, so it may be broken at anytime.</dd>
+</dl>
+<p>The update can be set under the company form.
+You can set for each services which currency you want to update.
+The logs of the update are visible under the service note.
+You can active or deactivate the update.
+The module uses internal ir_cron feature from OpenERP, so the job is launched once
+the server starts if the 'first execute date' is before the current day.
+The module supports multi-company currency in two ways:</p>
+<ul class="simple">
+<li>the currencies are shared, you can set currency update only on one</li>
+</ul>
+<blockquote>
+company</blockquote>
+<ul class="simple">
+<li>the currency are separated, you can set currency on every company</li>
+</ul>
+<blockquote>
+separately</blockquote>
+<p>A function field lets you know your currency configuration.</p>
+<p>If in multi-company mode, the base currency will be the first company's currency
+found in database.</p>
+<p>Thanks to main contributors: Grzegorz Grzelak, Alexis de Lattre</p>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

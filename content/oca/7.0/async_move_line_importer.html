@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Asynchronous move/move line CSV importer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Asynchronous move/move line CSV importer</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Asynchronous move/move line CSV importer async_move_line_importer</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Camptocamp</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="http://www.camptocamp.com">http://www.camptocamp.com</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>0.1.1</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>base, account</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>account-financial-tools</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<p>This module allows you to import moves / move lines via CSV asynchronously.</p>
+<p>You can access model in the journal entries menu -&gt; Moves/ Move lines importer.
+User must be an account manger.</p>
+<p>To import a CSV simply save an UTF8 CSV file in the &quot;file&quot; field.
+Then you can choose a CSV separator.</p>
+<p>If volumetry is important you can tick &quot;Fast import&quot; check box.
+When enabled import will be faster but it will not use orm and may
+not support all CSV canvas.</p>
+<ul class="simple">
+<li>Entry posted option of journal will be skipped.</li>
+<li>AA lines will only be created when moves are posted.</li>
+<li>Tax lines computation will be skipped until the move are posted.</li>
+</ul>
+<p>This option should be used with caution and preferably in conjunction with provided canvas in tests/data</p>
+<p>Then simply press import file button. The process will be run in background
+and you will be able to continue your work.</p>
+<p>When the import is finished you will received a notification and an
+import report will be available on the record</p>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
