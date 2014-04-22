@@ -11,6 +11,10 @@
 6.1,account-consolidation,lp:~account-core-editors/account-consolidation/6.1
 7.0,account-financial-tools,lp:account-financial-tools/7.0
 6.1,account-financial-tools,lp:account-financial-tools/6.1
+7.0,account-invoicing,lp:account-invoicing/7.0
+7.0,account-invoice-report,lp:account-invoice-report/7.0
+7.0,openerp-fiscal-rules,lp:openerp-fiscal-rules/7.0
+6.1,storno-accounting,lp_storno-accounting/6.1
 7.0,account-payment,lp:account-payment/7.0
 6.1,account-payment,lp:account-payment/6.1
 7.0,account-financial-report,lp:account-financial-report/7.0
