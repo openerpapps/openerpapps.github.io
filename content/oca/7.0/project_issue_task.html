@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>Invoice Production Lots</title>
+    <title>Project Issue related Tasks</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,8 +36,8 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Invoice Production Lots</h1>
-        <p class="lead">Display delivered serial numbers in invoice</p>
+        <h1>Project Issue related Tasks</h1>
+        <p class="lead">Use Tasks to support Issue resolution reports</p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
 
@@ -47,17 +47,17 @@
 
         <tr>
             <th>Name</th>
-            <td>Invoice Production Lots account_invoice_production_lot</td>
+            <td>Project Issue related Tasks project_issue_task</td>
         </tr>
 
         <tr>
             <th>Author</th>
-            <td>Agile Business Group</td>
+            <td>Daniel Reis</td>
         </tr>
 
         <tr>
             <th>Website</th>
-            <td><a href="http://www.agilebg.com">http://www.agilebg.com</a></td>
+            <td><a href=""></a></td>
         </tr>
 
         <tr>
@@ -67,12 +67,12 @@
 
         <tr>
             <th>Dependencies</th>
-            <td>sale_stock, invoice_webkit, stock_picking_invoice_link</td>
+            <td>project_issue</td>
         </tr>
 
         <tr>
             <th>Repository</th>
-            <td>account-invoice-report</td>
+            <td>project-service</td>
         </tr>
 
       </table>
@@ -102,9 +102,20 @@
 <div class="document">
 
 
-<p>This module prints, for each (customer) invoice line, the delivered production
-lots. The serial numbers are displayed in the &quot;formatted note&quot; field,
-introduced by invoice_webkit module</p>
+<p>Support for the use case where solving an Issue means a Task should be done,
+such as an on site visit, and a report must be made to document the work done.
+This is a common scenario in technical field services.</p>
+<p>The Issue form already has a &quot;Task&quot; field, allowing to create a Task related
+to an Issue.
+This module adds some usability improvements:</p>
+<blockquote>
+<ul class="simple">
+<li>&quot;Create Task&quot; button on the Issue form</li>
+<li>Automaticaly Close the Issue when the Task is Closed</li>
+<li>Automatically Cancel the Task when Issue is Cancelled</li>
+<li>Make the Task also visible to all followers of the related Issue</li>
+</ul>
+</blockquote>
 </div>
 </body>
 </html>

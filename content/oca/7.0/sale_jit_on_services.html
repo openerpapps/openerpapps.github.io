@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>Invoice Production Lots</title>
+    <title>Sale Service Just In Time</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,8 +36,8 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Invoice Production Lots</h1>
-        <p class="lead">Display delivered serial numbers in invoice</p>
+        <h1>Sale Service Just In Time</h1>
+        <p class="lead"></p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
 
@@ -47,32 +47,32 @@
 
         <tr>
             <th>Name</th>
-            <td>Invoice Production Lots account_invoice_production_lot</td>
+            <td>Sale Service Just In Time sale_jit_on_services</td>
         </tr>
 
         <tr>
             <th>Author</th>
-            <td>Agile Business Group</td>
+            <td>Camptocamp</td>
         </tr>
 
         <tr>
             <th>Website</th>
-            <td><a href="http://www.agilebg.com">http://www.agilebg.com</a></td>
+            <td><a href="http://www.camptocamp.com">http://www.camptocamp.com</a></td>
         </tr>
 
         <tr>
             <th>Version</th>
-            <td>1.1</td>
+            <td>1.0</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>sale_stock, invoice_webkit, stock_picking_invoice_link</td>
+            <td>procurement</td>
         </tr>
 
         <tr>
             <th>Repository</th>
-            <td>account-invoice-report</td>
+            <td>sale-wkfl</td>
         </tr>
 
       </table>
@@ -102,9 +102,26 @@
 <div class="document">
 
 
-<p>This module prints, for each (customer) invoice line, the delivered production
-lots. The serial numbers are displayed in the &quot;formatted note&quot; field,
-introduced by invoice_webkit module</p>
+<div class="section" id="sale-service-just-in-time">
+<h1>Sale Service Just In Time</h1>
+<p>When you make a SO with products and services, the workflow of the SO will not
+reach the state done unless you deliver all products and procurements
+linked to service products are done.</p>
+<p>Usually, when the MRP runs, it marks procurements of services' lines as
+done. But, you may want to mark them as done like if you were using the
+mrp_jit module.</p>
+<p>This module provide that feature: It bring the behavior of the mrp_jit module
+but only on services products.</p>
+<div class="section" id="contributors">
+<h2>Contributors</h2>
+<blockquote>
+<ul class="simple">
+<li>Joël Grand-Guillaume &lt;<a class="reference external" href="mailto:joel.grand-guillaume&#64;camptocamp.com">joel.grand-guillaume&#64;camptocamp.com</a>&gt;</li>
+<li>Yannick Vaucher &lt;<a class="reference external" href="mailto:yannick.vaucher&#64;camptocamp.com">yannick.vaucher&#64;camptocamp.com</a>&gt;</li>
+</ul>
+</blockquote>
+</div>
+</div>
 </div>
 </body>
 </html>

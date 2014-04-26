@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>Invoice Production Lots</title>
+    <title>Stock Invoice Picking Incoterm</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,8 +36,8 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Invoice Production Lots</h1>
-        <p class="lead">Display delivered serial numbers in invoice</p>
+        <h1>Stock Invoice Picking Incoterm</h1>
+        <p class="lead"></p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
 
@@ -47,7 +47,7 @@
 
         <tr>
             <th>Name</th>
-            <td>Invoice Production Lots account_invoice_production_lot</td>
+            <td>Stock Invoice Picking Incoterm stock_invoice_picking_incoterm</td>
         </tr>
 
         <tr>
@@ -62,17 +62,17 @@
 
         <tr>
             <th>Version</th>
-            <td>1.1</td>
+            <td>0.1</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>sale_stock, invoice_webkit, stock_picking_invoice_link</td>
+            <td>stock_invoice_picking</td>
         </tr>
 
         <tr>
             <th>Repository</th>
-            <td>account-invoice-report</td>
+            <td>account-invoicing</td>
         </tr>
 
       </table>
@@ -102,9 +102,11 @@
 <div class="document">
 
 
-<p>This module prints, for each (customer) invoice line, the delivered production
-lots. The serial numbers are displayed in the &quot;formatted note&quot; field,
-introduced by invoice_webkit module</p>
+<p>This module adds the field incoterm to invoice and picking. In this way the
+user can specify the incoterm directly on these documents, with no need to
+refer to the incoterm of the order (which could even be missing).
+The module extends 'stock_invoice_picking' so that the invoices created
+from pickings will have the same incoterm set in the picking.</p>
 </div>
 </body>
 </html>

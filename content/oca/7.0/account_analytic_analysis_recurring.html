@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>Invoice Production Lots</title>
+    <title>Contracts Management recurring</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,8 +36,8 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Invoice Production Lots</h1>
-        <p class="lead">Display delivered serial numbers in invoice</p>
+        <h1>Contracts Management recurring</h1>
+        <p class="lead"></p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
 
@@ -47,32 +47,32 @@
 
         <tr>
             <th>Name</th>
-            <td>Invoice Production Lots account_invoice_production_lot</td>
+            <td>Contracts Management recurring account_analytic_analysis_recurring</td>
         </tr>
 
         <tr>
             <th>Author</th>
-            <td>Agile Business Group</td>
+            <td>OpenERP SA</td>
         </tr>
 
         <tr>
             <th>Website</th>
-            <td><a href="http://www.agilebg.com">http://www.agilebg.com</a></td>
+            <td><a href="http://openerp.com">http://openerp.com</a></td>
         </tr>
 
         <tr>
             <th>Version</th>
-            <td>1.1</td>
+            <td>0.1</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>sale_stock, invoice_webkit, stock_picking_invoice_link</td>
+            <td>base, account_analytic_analysis</td>
         </tr>
 
         <tr>
             <th>Repository</th>
-            <td>account-invoice-report</td>
+            <td>contract-management</td>
         </tr>
 
       </table>
@@ -102,9 +102,12 @@
 <div class="document">
 
 
-<p>This module prints, for each (customer) invoice line, the delivered production
-lots. The serial numbers are displayed in the &quot;formatted note&quot; field,
-introduced by invoice_webkit module</p>
+<div class="section" id="this-module-add-a-new-feature-in-contracts-to-manage-recurring-invoice">
+<h1>This module add a new feature in contracts to manage recurring invoice</h1>
+<p>This is a backport of the new V8 feature available in trunk and saas. With the V8 release this module will be deprecated.
+It also add a little feature, you can use #START# and #END# in the contract line to automatically insert the dates of the invoiced period.</p>
+<p>Backport done By Yannick Buron.</p>
+</div>
 </div>
 </body>
 </html>

@@ -62,7 +62,7 @@
 
         <tr>
             <th>Version</th>
-            <td>1.0</td>
+            <td>1.1</td>
         </tr>
 
         <tr>
@@ -108,24 +108,30 @@
 by users that lead to corrupted datas. This is based on our experiences
 and legal state of the art in other software.</p>
 <p>Summary of constraints are:</p>
-<ul class="simple">
-<li>Add a constraint on account move: you cannot pickup a date that is not
-in the fiscal year of the concerned period</li>
-<li>For manual entries when multicurrency:<ol class="loweralpha">
+<ul>
+<li><p class="first">Add a constraint on account move: you cannot pickup a date that is not
+in the fiscal year of the concerned period (configurable per journal)</p>
+</li>
+<li><p class="first">For manual entries when multicurrency:</p>
+<ol class="loweralpha simple">
 <li>Validation on the use of the 'Currency' and 'Currency Amount'
 fields as it is possible to enter one without the other</li>
 <li>Validation to prevent a Credit amount with a positive
 'Currency Amount', or a Debit with a negative 'Currency Amount'</li>
 </ol>
 </li>
-<li>Add a check on entries that user cannot provide a secondary currency
-if the same than the company one.</li>
-<li>Remove the possibility to modify or delete a move line related to an
+<li><p class="first">Add a check on entries that user cannot provide a secondary currency
+if the same than the company one.</p>
+</li>
+<li><p class="first">Remove the possibility to modify or delete a move line related to an
 invoice or a bank statement, no matter what the status of the move
 (draft, validated or posted). This is useful in a standard context but
 even more if you're using <cite>account_default_draft_move</cite>. This way you ensure
 that the user cannot make mistakes even in draft state, he must pass through the
-parent object to make his modification.</li>
+parent object to make his modification.</p>
+<p>Contributors
+* Stéphane Bidoul &lt;<a class="reference external" href="mailto:stephane.bidoul&#64;acsone.eu">stephane.bidoul&#64;acsone.eu</a>&gt;</p>
+</li>
 </ul>
 </div>
 </div>

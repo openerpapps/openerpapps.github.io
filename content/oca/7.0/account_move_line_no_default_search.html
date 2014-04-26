@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>Invoice Production Lots</title>
+    <title>Move line search view - disable defaults for period and journal</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,8 +36,8 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Invoice Production Lots</h1>
-        <p class="lead">Display delivered serial numbers in invoice</p>
+        <h1>Move line search view - disable defaults for period and journal</h1>
+        <p class="lead"></p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
 
@@ -47,32 +47,32 @@
 
         <tr>
             <th>Name</th>
-            <td>Invoice Production Lots account_invoice_production_lot</td>
+            <td>Move line search view - disable defaults for period and journal account_move_line_no_default_search</td>
         </tr>
 
         <tr>
             <th>Author</th>
-            <td>Agile Business Group</td>
+            <td>Therp BV</td>
         </tr>
 
         <tr>
             <th>Website</th>
-            <td><a href="http://www.agilebg.com">http://www.agilebg.com</a></td>
+            <td><a href="http://therp.nl">http://therp.nl</a></td>
         </tr>
 
         <tr>
             <th>Version</th>
-            <td>1.1</td>
+            <td>0.1</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>sale_stock, invoice_webkit, stock_picking_invoice_link</td>
+            <td>account</td>
         </tr>
 
         <tr>
             <th>Repository</th>
-            <td>account-invoice-report</td>
+            <td>account-financial-tools</td>
         </tr>
 
       </table>
@@ -102,9 +102,13 @@
 <div class="document">
 
 
-<p>This module prints, for each (customer) invoice line, the delivered production
-lots. The serial numbers are displayed in the &quot;formatted note&quot; field,
-introduced by invoice_webkit module</p>
+<p>OpenERP 7.0 implements a custom javascript search view for move lines. This
+search view shows dropdowns for period and journal. By default, these are
+set to the default journal and (current) period.</p>
+<p>This module leaves the search view extension for move lines intact, but
+disables the default search values for the dropdowns so that you do not
+have to disable these before entering your own search queries.</p>
+<img alt="/account_move_line_no_default_search/static/src/img/move_line_search_view.png" src="/account_move_line_no_default_search/static/src/img/move_line_search_view.png" />
 </div>
 </body>
 </html>

@@ -62,12 +62,12 @@
 
         <tr>
             <th>Version</th>
-            <td>1.0</td>
+            <td>1.1</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>account</td>
+            <td>account, l10n_fr</td>
         </tr>
 
         <tr>
@@ -102,14 +102,21 @@
 <div class="document">
 
 
-<p>This module lets users keep track of the companies' unique
-identification numbers from the official SIRENE registry in France:
-SIRET, SIREN and NIC.  These numbers identify each company and their
-subsidiaries, and are often required for administrative tasks.</p>
-<p>At the top of the Partner form, users will be able to enter the SIREN
+<div class="section" id="this-module-add-the-french-company-identity-numbers">
+<h1>This module add the French company identity numbers.</h1>
+<p>This can help any company doing business with French companies
+by letting users track the partners' unique identification
+numbers from the official SIRENE registry in France: SIRET, SIREN and NIC.
+These numbers identify each company and their subsidiaries, and are
+often required for administrative tasks.</p>
+<p>On the Partner form, users will be able to enter the SIREN
 and NIC numbers, and the SIRET number will be calculated
 automatically.  The last digits of the SIREN and NIC are control keys:
 OpenERP will check their validity when partners are recorded.</p>
+<p>ATTENTION! this module replaces the fields on the Company form with the new
+ones on the Partner form, but it will NOT copy the corresponding data: you
+will have to enter them again.</p>
+</div>
 </div>
 </body>
 </html>
