@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>Simple Framework Agreement</title>
+    <title>Multiple EAN13 on products</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Simple Framework Agreement</h1>
+        <h1>Multiple EAN13 on products</h1>
         <p class="lead"></p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
@@ -47,7 +47,7 @@
 
         <tr>
             <th>Name</th>
-            <td>Simple Framework Agreement framework_agreement</td>
+            <td>Multiple EAN13 on products product_multi_ean</td>
         </tr>
 
         <tr>
@@ -62,17 +62,17 @@
 
         <tr>
             <th>Version</th>
-            <td>0.1.1</td>
+            <td>1.2</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>stock, procurement, purchase</td>
+            <td>base, product</td>
         </tr>
 
         <tr>
             <th>Repository</th>
-            <td>purchase-wkfl</td>
+            <td>stock-logistic-barcode</td>
         </tr>
 
       </table>
@@ -102,21 +102,11 @@
 <div class="document">
 
 
-<div class="section" id="long-term-agreement-or-framework-agreement-on-price">
-<h1>Long Term Agreement (or Framework Agreement) on price.</h1>
-<p>Agreements are defined by a product, a date range , a supplier, a price, a lead time
-and agreed quantity.</p>
-<p>Agreements are set on a product view or using a menu in the product configuration.</p>
-<p>There can be only one agreement for the same supplier and product at the same time, even
-if we may have different prices depending on lead time/qty.</p>
-<p>There is an option on company to restrict one agreement per product at same time.</p>
-<p>If an agreement is running its price will be automatically used in PO.
-A warning will be raised in case of exhaustion of override of agreement price.</p>
-<p><strong>Technical aspect</strong></p>
-<p>The module provide an observalbe mixin to enable generic on_change management on various model
-related to agreements.</p>
-<p>The framework agreement is by default related to purchase order but the addon
-provides a library to integrate it with any other model easily</p>
+<div class="section" id="multiple-ean13-on-products">
+<h1>Multiple EAN13 on products</h1>
+<p>Allow Multiple EAN13 on products.
+A list of EAN13 is available for each product with a priority, so a
+main ean13 code is defined.</p>
 </div>
 </div>
 </body>
