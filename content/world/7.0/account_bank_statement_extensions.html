@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>ISO 20022 XML payments</title>
+    <title>Bank Statement extensions to support e-banking</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
       </div>
 
       <div class="jumbotron">
-        <h1>ISO 20022 XML payments</h1>
+        <h1>Bank Statement extensions to support e-banking</h1>
         <p class="lead"></p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
@@ -47,7 +47,7 @@
 
         <tr>
             <th>Name</th>
-            <td>ISO 20022 XML payments account_pain</td>
+            <td>Bank Statement extensions to support e-banking account_bank_statement_extensions</td>
         </tr>
 
         <tr>
@@ -62,12 +62,12 @@
 
         <tr>
             <th>Version</th>
-            <td>0.3</td>
+            <td>2.0</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>account, base_iban, account_payment</td>
+            <td>account</td>
         </tr>
 
         <tr>
@@ -102,23 +102,23 @@
 <div class="document">
 
 
-<div class="section" id="iso-20022-xml-payment-files">
-<h1>ISO 20022 XML payment files</h1>
-<p>Module to generate Customer Credit Transfer Initiation message ISO 20022 XML - pain.001.001.03.
-Both SEPA and non-SEPA payments are supported.</p>
-<div class="section" id="other-features">
-<h2>Other features:</h2>
+<div class="section" id="module-that-extends-the-standard-account-bank-statement-line-object-for-improved-e-banking-support">
+<h1>Module that extends the standard account_bank_statement_line object for improved e-banking support.</h1>
+<div class="section" id="this-module-adds">
+<h2>This module adds:</h2>
+<blockquote>
 <ul class="simple">
-<li>The module prohibits the removal of a confirmed Payment Order. Such a removal is still possible via the 'Undo Payment' button available to users of the 'Accounting / Manager' group.</li>
-<li>Support for customer invoices as well as supplier credit notes.</li>
-<li>Invoices with the 'Supplier Direct Debit' flag set will be excluded from the 'Select Invoices to Pay' filter</li>
+<li>valuta date</li>
+<li>batch payments</li>
+<li>Payment Reference field to support ISO 20022 EndToEndReference (simple or batch. detail) or PaymentInformationIdentification (batch)</li>
+<li>Creditor Reference fields to support ISO 20022 CdtrRefInf (e.g. structured communication &amp; communication type)</li>
+<li>traceability of changes to bank statement lines</li>
+<li>bank statement line views</li>
+<li>bank statements balances report</li>
+<li>performance improvements for digital import of bank statement (via 'ebanking_import' context flag)</li>
+<li>name_search on res.partner.bank enhanced to allow search on bank and iban account numbers</li>
 </ul>
-<p>Features targeted for the Belgian market (cf. febelfin guidelines):</p>
-<ul class="simple">
-<li>creditor account identified by IBAN (without BIC) for BE IBAN accounts</li>
-<li>support for belgian structured communication format</li>
-<li>by default, the right part of the VAT number (KBO/BCE number) is used to identify the Initiating Party</li>
-</ul>
+</blockquote>
 </div>
 </div>
 </div>

@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>ISO 20022 XML payments</title>
+    <title>account_bank_statement/account_voucher usability improvements</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
       </div>
 
       <div class="jumbotron">
-        <h1>ISO 20022 XML payments</h1>
+        <h1>account_bank_statement/account_voucher usability improvements</h1>
         <p class="lead"></p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
@@ -47,7 +47,7 @@
 
         <tr>
             <th>Name</th>
-            <td>ISO 20022 XML payments account_pain</td>
+            <td>account_bank_statement/account_voucher usability improvements account_bank_statement_voucher</td>
         </tr>
 
         <tr>
@@ -62,12 +62,12 @@
 
         <tr>
             <th>Version</th>
-            <td>0.3</td>
+            <td>0.1</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>account, base_iban, account_payment</td>
+            <td>account, account_voucher, account_bank_statement_extensions, base_vat_enhancements, account_currency_enhancements</td>
         </tr>
 
         <tr>
@@ -102,24 +102,30 @@
 <div class="document">
 
 
-<div class="section" id="iso-20022-xml-payment-files">
-<h1>ISO 20022 XML payment files</h1>
-<p>Module to generate Customer Credit Transfer Initiation message ISO 20022 XML - pain.001.001.03.
-Both SEPA and non-SEPA payments are supported.</p>
-<div class="section" id="other-features">
-<h2>Other features:</h2>
+<div class="section" id="bank-statement-usability-improvements">
+<h1>Bank Statement usability improvements</h1>
+<p>Usability improvements when using account_voucher in combination with bank_statement processing:</p>
+<blockquote>
 <ul class="simple">
-<li>The module prohibits the removal of a confirmed Payment Order. Such a removal is still possible via the 'Undo Payment' button available to users of the 'Accounting / Manager' group.</li>
-<li>Support for customer invoices as well as supplier credit notes.</li>
-<li>Invoices with the 'Supplier Direct Debit' flag set will be excluded from the 'Select Invoices to Pay' filter</li>
+<li>Generate &amp; maintain accounting moves from within a bank statement on a line by line basis.</li>
+<li>Replace the &quot;green/red ball&quot; button by the &quot;arrow&quot; and &quot;delete&quot; buttons.</li>
+<li>Bank statement line buttons : the green arrow creates/opens Voucher or Move, the Delete button removes draft Vouchers or Moves.</li>
+<li>For AR/AP general accounts the account_voucher object is used for reconciliation, for other accounts a regular move is created.</li>
+<li>When no partner has been entered on the bank statement line a search view is presented to find and select matching AR/AP transactions without a partner filter.</li>
+<li>An intermediate selection screen is presented in case of multiple outstanding invoices. This screen is pre-filled with the matching line(s).</li>
+<li>The reconciled amount is shown on the bank statement line. An exclamation mark indicates differences between the paid amount and the open transactions.</li>
+<li>The possibility to delete a Bank Statement with associated Posted Vouchers or Moves has been disabled.</li>
+<li>Tax Codes and Tax Base Amounts can be added to the generated Accounting Moves in order to facilitate the encoding of bank costs.</li>
+<li>The Bank Statement Confirm behaviour has been changed: at Confirm time a Posted Move will be created for Bank Statement Lines with no or Draft Moves.</li>
+<li>Accounting Entry Changes are blocked for Moves linked to a Confirmed Bank Statement.</li>
+<li>The creation of Payment Voucher on Confirmed Bank Statements is not allowed.</li>
+<li>Otherwise 'orphaned' Voucher Lines are removed when the associated Accounting Entry Line is deleted.</li>
+<li>Remove Vouchers created from an invoice (e.g. via invoice 'Payment' button) when the invoice is cancelled.</li>
+<li>Remove Vouchers created from a bank statement line when the Voucher reference is removed from the bank statement line.</li>
+<li>Generate Voucher number and Move name from bank statement number and line.</li>
+<li>Update Partner records with Bank Account Number information during reconciliation (including BBAN-&gt;IBAN conversion).</li>
 </ul>
-<p>Features targeted for the Belgian market (cf. febelfin guidelines):</p>
-<ul class="simple">
-<li>creditor account identified by IBAN (without BIC) for BE IBAN accounts</li>
-<li>support for belgian structured communication format</li>
-<li>by default, the right part of the VAT number (KBO/BCE number) is used to identify the Initiating Party</li>
-</ul>
-</div>
+</blockquote>
 </div>
 </div>
 </body>
