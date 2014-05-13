@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>Excel report engine</title>
+    <title>base_vat module enhancements</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Excel report engine</h1>
+        <h1>base_vat module enhancements</h1>
         <p class="lead"></p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
@@ -47,7 +47,7 @@
 
         <tr>
             <th>Name</th>
-            <td>Excel report engine report_xls</td>
+            <td>base_vat module enhancements base_vat_enhancements</td>
         </tr>
 
         <tr>
@@ -62,12 +62,12 @@
 
         <tr>
             <th>Version</th>
-            <td>0.4</td>
+            <td>0.1</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>base</td>
+            <td>base_vat</td>
         </tr>
 
         <tr>
@@ -102,44 +102,14 @@
 <div class="document">
 
 
-<div class="section" id="excel-report-engine">
-<h1>Excel report engine</h1>
-<p>This module adds Excel export capabilities to the standard OpenERP reporting engine.</p>
-<div class="section" id="report-development">
-<h2>Report development</h2>
-<p>In order to create an Excel report you can</p>
+<div class="section" id="base-vat-module-enhancements">
+<h1>base_vat module enhancements</h1>
 <ul class="simple">
-<li>define a report of type 'xls'</li>
-<li>pass <tt class="docutils literal">{'xls_export': 1}</tt> via the context to the report create method</li>
+<li>give feedback on successful vat check</li>
+<li>normalize res.partner vat field in the database to improve search performance</li>
+<li>normalize search argument when searching on VAT number</li>
+<li>replace 'check_vat' constraint by check on vat field to improve performance</li>
 </ul>
-<p>The <tt class="docutils literal">report_xls</tt> class contains a number of attributes and methods to facilitate
-the creation XLS reports in OpenERP.</p>
-<ul>
-<li><p class="first">cell types</p>
-<p>Supported cell types : text, number, boolean, date.</p>
-</li>
-<li><p class="first">cell styles</p>
-<p>The predefined cell style definitions result in a consistent
-look and feel of the OpenERP Excel reports.</p>
-</li>
-<li><p class="first">cell formulas</p>
-<p>Cell formulas can be easily added with the help of the <tt class="docutils literal">rowcol_to_cell()</tt> function which
-you can import from the <tt class="docutils literal">utils.py</tt> module.</p>
-</li>
-<li><p class="first">Excel templates</p>
-<p>It is possible to define Excel templates which can be adapted by 'inherited' modules.
-Download the <tt class="docutils literal">account_move_line_report_xls</tt> module from <a class="reference external" href="http://apps.openerp.com">http://apps.openerp.com</a>
-as example.</p>
-</li>
-<li><p class="first">XLS with multiple sheets</p>
-<p>Download the <tt class="docutils literal">account_journal_report_xls</tt> module from <a class="reference external" href="http://apps.openerp.com">http://apps.openerp.com</a> as example.</p>
-</li>
-</ul>
-</div>
-<div class="section" id="development-assistance">
-<h2>Development assistance</h2>
-<p>Contact <a class="reference external" href="mailto:info&#64;noviat.com">info&#64;noviat.com</a> for help with the development of Excel reports in OpenERP.</p>
-</div>
 </div>
 </div>
 </body>

@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>Excel report engine</title>
+    <title>Import holidays in timesheets</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,11 +32,11 @@
           <li class="active"><a href="index.html">Index</a></li>
           <li><a href="/index.html">Home</a></li>
         </ul>
-        <h3 class="text-muted">world / 7.0</h3>
+        <h3 class="text-muted">oca / 7.0</h3>
       </div>
 
       <div class="jumbotron">
-        <h1>Excel report engine</h1>
+        <h1>Import holidays in timesheets</h1>
         <p class="lead"></p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
@@ -47,32 +47,32 @@
 
         <tr>
             <th>Name</th>
-            <td>Excel report engine report_xls</td>
+            <td>Import holidays in timesheets hr_timesheet_holidays</td>
         </tr>
 
         <tr>
             <th>Author</th>
-            <td>Noviat</td>
+            <td>Camptocamp</td>
         </tr>
 
         <tr>
             <th>Website</th>
-            <td><a href="http://www.noviat.com">http://www.noviat.com</a></td>
+            <td><a href="http://www.camptocamp.com">http://www.camptocamp.com</a></td>
         </tr>
 
         <tr>
             <th>Version</th>
-            <td>0.4</td>
+            <td>1.0</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>base</td>
+            <td>hr, account, hr_holidays, hr_timesheet_sheet</td>
         </tr>
 
         <tr>
             <th>Repository</th>
-            <td>noviat-addons-extra</td>
+            <td>hr-timesheet</td>
         </tr>
 
       </table>
@@ -102,43 +102,31 @@
 <div class="document">
 
 
-<div class="section" id="excel-report-engine">
-<h1>Excel report engine</h1>
-<p>This module adds Excel export capabilities to the standard OpenERP reporting engine.</p>
-<div class="section" id="report-development">
-<h2>Report development</h2>
-<p>In order to create an Excel report you can</p>
+<div class="section" id="wizard-to-import-holidays-in-the-current-timesheet">
+<h1>Wizard to import holidays in the current timesheet</h1>
+<p>This module adds a relation between the Leave Types and the Analytic Accounts.
+The Timesheet lines are created on the Analytic Account defined on the Leave
+Type.</p>
+<p>The hours to input per day is configurable at company level.</p>
+<p>Limitations:</p>
 <ul class="simple">
-<li>define a report of type 'xls'</li>
-<li>pass <tt class="docutils literal">{'xls_export': 1}</tt> via the context to the report create method</li>
+<li>Consider that the work days are Monday to Friday</li>
+<li>The wizard creates the attendances each day with Sign-ins at 00:00 and
+Sign-outs at (00:00 + configured timesheet hours per day).</li>
 </ul>
-<p>The <tt class="docutils literal">report_xls</tt> class contains a number of attributes and methods to facilitate
-the creation XLS reports in OpenERP.</p>
-<ul>
-<li><p class="first">cell types</p>
-<p>Supported cell types : text, number, boolean, date.</p>
-</li>
-<li><p class="first">cell styles</p>
-<p>The predefined cell style definitions result in a consistent
-look and feel of the OpenERP Excel reports.</p>
-</li>
-<li><p class="first">cell formulas</p>
-<p>Cell formulas can be easily added with the help of the <tt class="docutils literal">rowcol_to_cell()</tt> function which
-you can import from the <tt class="docutils literal">utils.py</tt> module.</p>
-</li>
-<li><p class="first">Excel templates</p>
-<p>It is possible to define Excel templates which can be adapted by 'inherited' modules.
-Download the <tt class="docutils literal">account_move_line_report_xls</tt> module from <a class="reference external" href="http://apps.openerp.com">http://apps.openerp.com</a>
-as example.</p>
-</li>
-<li><p class="first">XLS with multiple sheets</p>
-<p>Download the <tt class="docutils literal">account_journal_report_xls</tt> module from <a class="reference external" href="http://apps.openerp.com">http://apps.openerp.com</a> as example.</p>
-</li>
-</ul>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you are using official addons instead of OCB addons.
+In order to avoid timezone issues, please ensure the
+following fix is installed on your system <a class="reference external" href="https://code.launchpad.net/~camptocamp/openobject-addons/7.0-fix-hr_timesheet_sheet-timezone-20130723/+merge/176459">Fix for Bug #1179893</a></p>
 </div>
-<div class="section" id="development-assistance">
-<h2>Development assistance</h2>
-<p>Contact <a class="reference external" href="mailto:info&#64;noviat.com">info&#64;noviat.com</a> for help with the development of Excel reports in OpenERP.</p>
+<div class="section" id="contributors">
+<h2>Contributors</h2>
+<ul class="simple">
+<li>Jean-Baptiste Aubort &lt;<a class="reference external" href="mailto:jean-baptiste.aubort&#64;camptocamp.com">jean-baptiste.aubort&#64;camptocamp.com</a>&gt;</li>
+<li>Guewen Baconnier &lt;<a class="reference external" href="mailto:guewen.baconnier&#64;camptocamp.com">guewen.baconnier&#64;camptocamp.com</a>&gt;</li>
+<li>Yannick Vaucher &lt;<a class="reference external" href="mailto:yannick.vaucher&#64;camptocamp.com">yannick.vaucher&#64;camptocamp.com</a>&gt;</li>
+</ul>
 </div>
 </div>
 </div>
