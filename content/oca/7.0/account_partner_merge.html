@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>Bank statement base completion</title>
+    <title>Account Partner Merge</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Bank statement base completion</h1>
+        <h1>Account Partner Merge</h1>
         <p class="lead"></p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
@@ -47,7 +47,7 @@
 
         <tr>
             <th>Name</th>
-            <td>Bank statement base completion account_statement_base_completion</td>
+            <td>Account Partner Merge account_partner_merge</td>
         </tr>
 
         <tr>
@@ -57,22 +57,22 @@
 
         <tr>
             <th>Website</th>
-            <td><a href="http://www.camptocamp.com">http://www.camptocamp.com</a></td>
+            <td><a href="http://www.camptocamp.com/">http://www.camptocamp.com/</a></td>
         </tr>
 
         <tr>
             <th>Version</th>
-            <td>1.0.3</td>
+            <td>1.0</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>account_statement_ext</td>
+            <td>account_report_company, base_partner_merge</td>
         </tr>
 
         <tr>
             <th>Repository</th>
-            <td>bank-statement-reconcile</td>
+            <td>partner-contact-management</td>
         </tr>
 
       </table>
@@ -102,31 +102,7 @@
 <div class="document">
 
 
-<blockquote>
-<p>The goal of this module is to improve the basic bank statement, help dealing with huge volume of
-reconciliation by providing basic rules to identify the partner of a bank statement line.
-Each bank statement profile can have its own rules to be applied according to a sequence order.</p>
-<p>Some basic rules are provided in this module:</p>
-<ol class="arabic simple">
-<li>Match from statement line label (based on partner field 'Bank Statement Label')</li>
-<li>Match from statement line label (based on partner name)</li>
-<li>Match from statement line reference (based on Invoice number)</li>
-</ol>
-<p>You can easily override this module and add your own rules in your own one. The basic rules only
-fill in  the partner, but you can use them to fill in any value of the line (in the future, we will
-add a rule to automatically match and reconcile the line).</p>
-<p>It adds as well a label on the bank statement line (on which the pre-define rules can match) and
-a char field on the partner called 'Bank Statement Label'. Using the pre-define rules, you will be
-able to match various labels for a partner.</p>
-<p>The reference of the line is always used by the reconciliation process. We're supposed to copy
-there (or write manually) the matching string. This can be: the order Number or an invoice number,
-or anything that will be found in the invoice accounting entry part to make the match.</p>
-<p>You can use it with  our account_advanced_reconcile module to automatize the reconciliation process.</p>
-<dl class="docutils">
-<dt>TODO: The rules that look for invoices to find out the partner should take back the payable / receivable</dt>
-<dd>account from there directly instead of retrieving it from partner properties !</dd>
-</dl>
-</blockquote>
+<p>Update invoice commercial_partner_id</p>
 </div>
 </body>
 </html>
