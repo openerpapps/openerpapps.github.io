@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
 
-    <title>Account Payment Extension</title>
+    <title>Sale Automatic Workflow Exception</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
       </div>
 
       <div class="jumbotron">
-        <h1>Account Payment Extension</h1>
+        <h1>Sale Automatic Workflow Exception</h1>
         <p class="lead"></p>
         <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
       </div>
@@ -47,32 +47,32 @@
 
         <tr>
             <th>Name</th>
-            <td>Account Payment Extension account_payment_extension</td>
+            <td>Sale Automatic Workflow Exception sale_automatic_workflow_exception</td>
         </tr>
 
         <tr>
             <th>Author</th>
-            <td>Zikzakmedia SL</td>
+            <td>Akretion</td>
         </tr>
 
         <tr>
             <th>Website</th>
-            <td><a href="www.zikzakmedia.com">www.zikzakmedia.com</a></td>
+            <td><a href="www.akretion.com">www.akretion.com</a></td>
         </tr>
 
         <tr>
             <th>Version</th>
-            <td>1.1.1</td>
+            <td>0.0.1</td>
         </tr>
 
         <tr>
             <th>Dependencies</th>
-            <td>base, account, account_payment</td>
+            <td>sale_exceptions, sale_automatic_workflow</td>
         </tr>
 
         <tr>
             <th>Repository</th>
-            <td>account-payment</td>
+            <td>e-commerce-addons</td>
         </tr>
 
       </table>
@@ -102,26 +102,11 @@
 <div class="document">
 
 
-<div class="section" id="account-payment-extension">
-<h1>Account payment extension.</h1>
-<div class="section" id="this-module-extends-the-account-payment-module-with-a-lot-of-features">
-<h2>This module extends the account_payment module with a lot of features:</h2>
-<blockquote>
-<ul class="simple">
-<li>Definition of payment types (cash, bank transfer, automatical bank transfer, ...). The payment type has a translatable name and note that can be shown in the invoices.</li>
-<li>Two default payment types for partners (client and supplier).</li>
-<li>Automatic selection of payment type in invoices. Now an invoice can have a payment term (30 days, 30/60 days, ...) and a payment type (cash, bank transfer, ...).</li>
-<li>A default check field in partner bank accounts. The default partner bank accounts are selected in invoices and payments.</li>
-<li>New menu/tree/forms to see payments to receive and payments to pay.</li>
-<li>The payments show tree editable fields: Due date, bank account and a check field (for example to write down if a bank check in paper support has been received).</li>
-<li>Two types of payment orders: Payable payment orders (from supplier invoices) and receivable payment orders (from client invoices). So we can make payment orders to receive the payments of our client invoices. Each payment order type has its own sequence.</li>
-<li>The payment orders allow negative payment amounts. So we can have payment orders for supplier invoices (pay money) and refund supplier invoices (return or receive money). Or for client invoices (receive money) and refund client invoices (return or pay money).</li>
-<li>Payment orders: Selected invoices are filtered by payment type, the second message communication can be set at the same time for several invoices.</li>
-</ul>
-</blockquote>
-<p>Based on previous work of Pablo Rocandio &amp; Zikzakmedia (version for 4.2).</p>
-</div>
-</div>
+<p>Auto installable Module for the compatibility
+with the Sale Automatic Workflow and Sale Exception.
+Order in exception are ignored by the cron to avoid useless testing
+every minutes. Please take care to active the cron &quot;test all draft&quot;
+in order to retest some time the order with an exception.</p>
 </div>
 </body>
 </html>

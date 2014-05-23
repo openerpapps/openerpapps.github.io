@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../../../assets/ico/favicon.ico">
+
+    <title>Invoices Reference</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- custom styles -->
+    <link href="../../../../assets/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Index</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+        <h3 class="text-muted">oca / 7.0</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Invoices Reference</h1>
+        <p class="lead"></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+
+    <div class="panel panel-default">
+      <table class="table">
+
+        <tr>
+            <th>Name</th>
+            <td>Invoices Reference account_invoice_reference</td>
+        </tr>
+
+        <tr>
+            <th>Author</th>
+            <td>Camptocamp</td>
+        </tr>
+
+        <tr>
+            <th>Website</th>
+            <td><a href="http://www.camptocamp.com">http://www.camptocamp.com</a></td>
+        </tr>
+
+        <tr>
+            <th>Version</th>
+            <td>1.0</td>
+        </tr>
+
+        <tr>
+            <th>Dependencies</th>
+            <td>account</td>
+        </tr>
+
+        <tr>
+            <th>Repository</th>
+            <td>bank-statement-reconcile</td>
+        </tr>
+
+      </table>
+    </div>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+            <!--
+            <li><a href="#revisions" data-toggle="tab">Changes</a></li>
+            -->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="description">
+            <p></p>
+            <?xml version="1.0" encoding="unicode" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<link rel="stylesheet" href="/usr/share/docutils/writers/html4css1/html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="invoices-reference">
+<h1>Invoices Reference</h1>
+<p>Aims to simplify the &quot;references&quot; fields on the invoices.</p>
+<p>We observed difficulties for the users to file the references (name,
+origin, free reference) and above all, to understand which field will be
+copied in the reference field of the move and move lines.</p>
+<p>The approach here is to state simple rules with one concern: consistency.
+The reference of the move lines must be the number of the document at their very
+origin (number of a sales order, of an external document like a supplier
+invoice, ...). The goal is for the accountant to be able to trace to the
+source document from a ledger).
+The description of a line should always be... well, a description. Not a number
+or a cryptic reference.</p>
+<p>It particularly fits with other modules of the bank-statement-reconcile series
+as account_advanced_reconcile_transaction_ref.</p>
+<div class="section" id="fields">
+<h2>Fields</h2>
+<p>Enumerating the information we need in an invoice, we find that the
+mandatory fields are:</p>
+<ul class="simple">
+<li>Invoice Number</li>
+<li>Description</li>
+<li>Internal Reference (&quot;our reference&quot;)</li>
+<li>External Reference (&quot;customer or supplier reference&quot;)</li>
+<li>Optionally, a technical transaction reference (credit card payment gateways, SEPA, ...)</li>
+</ul>
+<p>Now, on the move lines:</p>
+<ul class="simple">
+<li>Name</li>
+<li>Reference</li>
+<li>Optionally, a technical transaction reference (added by the module <cite>base_transaction_id</cite>)</li>
+</ul>
+<p>Let's see how the information will be organized with this module.</p>
+<div class="section" id="customers-invoices-refunds">
+<h3>Customers Invoices / Refunds</h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="27%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Information</th>
+<th class="head">Invoice field</th>
+<th class="head">Instead of (in base modules)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Invoice number</td>
+<td>Invoice number</td>
+<td>Invoice number</td>
+</tr>
+<tr><td>Description</td>
+<td>Name</td>
+<td>--</td>
+</tr>
+<tr><td>Internal Ref</td>
+<td>Origin</td>
+<td>Origin</td>
+</tr>
+<tr><td>External Ref</td>
+<td>Reference</td>
+<td>Name</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>Information propagated to the move lines:</p>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Move line field</th>
+<th class="head">Invoice field</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Description</td>
+<td>Name</td>
+</tr>
+<tr><td>Reference</td>
+<td>Origin, or Invoice number if empty</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section" id="supplier-invoices-refunds">
+<h3>Supplier Invoices / Refunds</h3>
+<p>Supplier invoices have an additional field <cite>supplier_invoice_number</cite>
+that we consider as redundant with the reference field.  This field is kept
+and even set as mandatory, while the reference field is hidden.</p>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="27%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Information</th>
+<th class="head">Invoice field</th>
+<th class="head">Instead of (in base modules)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Invoice number</td>
+<td>Invoice number</td>
+<td>Invoice number</td>
+</tr>
+<tr><td>Description</td>
+<td>Name</td>
+<td>--</td>
+</tr>
+<tr><td>Internal Ref</td>
+<td>Origin</td>
+<td>Origin</td>
+</tr>
+<tr><td>External Ref</td>
+<td>Supplier number</td>
+<td>Supplier number</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>The reference field is hidden when the reference type is &quot;free reference&quot;,
+because it is already filed in the Supplier invoice number.</p>
+<p>Information propagated to the move lines:</p>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Move line field</th>
+<th class="head">Invoice field</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Description</td>
+<td>Name</td>
+</tr>
+<tr><td>Reference</td>
+<td>Supplier number, or Invoice number if empty</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+            </div>
+            <!--
+            <div# class="tab-pane" id="revisions">
+            <p></p>
+                None
+            </div>
+            -->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
